@@ -1,0 +1,5 @@
+@media screen and (max-width: 1600px) {
+  .teaser > img {
+    object-position: center !important;
+  }
+}

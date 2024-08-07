@@ -1,0 +1,19 @@
+/* Global css values */
+@import "_reset.css";
+@import "_vars.css";
+@import "_global.css";
+
+/* Static components */
+@import "Layout.component.css";
+@import "Navigation.component.css";
+@import "Footer.component.css";
+
+/* Dynamic Components */
+@import "Teaser.component.css";
+@import "Grid.component.css";
+@import "DonationGraph.component.css";
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

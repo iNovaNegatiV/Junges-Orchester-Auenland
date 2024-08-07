@@ -1,0 +1,30 @@
+{
+  "name": "next-js-ulimtate-tutorial",
+  "version": "1.0.0",
+  "description": "Next.js Storyblok Ultimate Tutorial",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+  },
+  "dependencies": {
+    "@fontsource/fira-sans": "^5.0.20",
+    "@fontsource/roboto": "^5.0.14",
+    "@react-email/render": "^0.0.17",
+    "@storyblok/react": "^3.0.10",
+    "next": "^14.2.5",
+    "nodemailer": "^6.9.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.13.0",
+    "storyblok-rich-text-react-renderer": "^2.9.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.7"
+  }
+}

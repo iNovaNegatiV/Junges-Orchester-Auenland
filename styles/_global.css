@@ -1,0 +1,89 @@
+a {
+  color: theme("colors.foreground") !important;
+  position: relative;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: theme("colors.foreground");
+}
+
+.background-color {
+  color: theme("colors.background") !important;
+}
+
+.foreground-color {
+  color: theme("colors.foreground") !important;
+}
+
+.decoration-color {
+  color: theme("colors.decoration") !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.active-route {
+  color: theme("colors.decoration") !important;
+}
+
+.no-link-decoration::after {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: theme("colors.foreground");
+  font-family: "Fira Sans" !important;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 32px !important;
+}
+
+h2 {
+  font-size: 28px !important;
+}
+
+h3 {
+  font-size: 24px !important;
+}
+
+h4 {
+  font-size: 20px !important;
+}
+
+h5 {
+  font-size: 16px !important;
+}
+
+h6 {
+  font-size: 12px !important;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 14px !important;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+}

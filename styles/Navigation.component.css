@@ -1,0 +1,40 @@
+.nav {
+  color: theme("colors.foreground");
+  background-color: theme("colors.background");
+}
+
+.phone-nav-expanded {
+  color: theme("colors.foreground");
+  background-color: theme("colors.background");
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav-mobile-footer > li > a {
+  font-size: 14px;
+}
+
+.multiple-nav-list-element,
+.bullet {
+  width: fit-content;
+}
+
+.multiple-nav-list-element:hover {
+  cursor: pointer;
+}
+
+.multiple-nav-list-element:hover > .bullet-list {
+  display: flex !important;
+  background: theme("colors.background");
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  width: 15rem;
+  border-radius: 12px;
+  top: 50;
+  z-index: 15;
+}
+
+.disabled {
+  pointer-events: none;
+}

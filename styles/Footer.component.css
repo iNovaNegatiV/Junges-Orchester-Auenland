@@ -1,0 +1,7 @@
+.footer.component {
+  background: theme("colors.background");
+}
+
+.footer.component .wrapper .pages > li > a {
+  font-size: 14px;
+}
