@@ -6,7 +6,6 @@
 /* Static components */
 @import "Layout.component.css";
 @import "Navigation.component.css";
-@import "Footer.component.css";
 
 /* Dynamic Components */
 @import "Teaser.component.css";

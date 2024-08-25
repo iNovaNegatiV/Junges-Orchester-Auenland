@@ -8,6 +8,11 @@ const Footer = ({}) => {
   const [slugs, setSlugs] = useState([]);
   const currentSlug = useMemo(() => getCurrentSlug(), [slugs]);
 
+  const containerStyle = "flex flex-col gap-4";
+  const headlineStyle =
+    "text-lightBlue no-underline after:content-[''] after:block after:mt-2 after:mb-3 after:h-px after:bg-decoration after:w-20";
+  const ankerStyle = "w-fit";
+
   function getCurrentSlug() {
     const url = router.asPath;
     let currentSlug = "home";
@@ -17,6 +22,7 @@ const Footer = ({}) => {
         return;
       }
     });
+
     return currentSlug;
   }
 
@@ -41,42 +47,59 @@ const Footer = ({}) => {
   }, []);
 
   return (
-    <footer className="footer component">
-      <div
-        className={
-          "wrapper flex flex-row justify-between w-4/5 m-auto pt-5 pb-5 phone:w-full phone:p-5"
-        }
-      >
-        <ul className="socials flex flex-row flex-wrap items-center gap-1">
-          <li className="mt-2">
+    <footer
+      className={
+        "w-full flex phone:flex-col gap-24 phone:px-10 justify-between bg-background text-foreground px-24 py-16"
+      }
+    >
+      <div className={containerStyle}>
+        <h4 className={headlineStyle}>Der Verein</h4>
+        {slugs
+          .filter((slug) => slug.content.footer_category === "association")
+          .map((slug) => (
             <a
-              className={"no-link-decoration"}
-              href="https://www.facebook.com/JungesOrchesterAuenland/?locale=de_DE"
+              key={slug.uuid}
+              href={`/${slug.slug}`}
+              className={ankerStyle.concat(
+                currentSlug === slug.slug ? " active-route" : ""
+              )}
             >
-              <FacebookIcon size={32} />
+              {slug.name}
             </a>
-          </li>
-          <li className="mt-2">
-            <a
-              className={"no-link-decoration"}
-              href="https://www.instagram.com/jungesorchesterauenland/"
-            >
-              <InstagramIcon size={32} />
-            </a>
-          </li>
-        </ul>
-        <ul className="pages flex flex-row flex-wrap items-center justify-end flex-wrap gap-5 phone:gap-2">
-          {slugs.map((slug) => (
-            <li key={slug.id}>
-              <a
-                className={currentSlug === slug.slug ? "active-route" : ""}
-                href={`/${slug.slug}`}
-              >
-                {slug.name}
-              </a>
-            </li>
           ))}
-        </ul>
+      </div>
+      <div className={containerStyle.concat(" grow")}>
+        <h4 className={headlineStyle}>Hilfe bekommen</h4>
+        {slugs
+          .filter((slug) => slug.content.footer_category === "help")
+          .map((slug) => (
+            <a
+              key={slug.uuid}
+              href={`/${slug.slug}`}
+              className={ankerStyle.concat(
+                currentSlug === slug.slug ? " active-route" : ""
+              )}
+            >
+              {slug.name}
+            </a>
+          ))}
+      </div>
+      <div className={containerStyle}>
+        <h4 className={headlineStyle}>Folgt uns auf Social Media</h4>
+        <div className={"flex flex-row gap-5"}>
+          <a
+            className={"no-link-decoration rounded-full bg-lightBlue p-2"}
+            href="https://www.instagram.com/jungesorchesterauenland/"
+          >
+            <InstagramIcon size={28} />
+          </a>
+          <a
+            className={"no-link-decoration rounded-full bg-lightBlue p-2"}
+            href="https://www.facebook.com/JungesOrchesterAuenland/?locale=de_DE"
+          >
+            <FacebookIcon size={28} />
+          </a>
+        </div>
       </div>
     </footer>
   );

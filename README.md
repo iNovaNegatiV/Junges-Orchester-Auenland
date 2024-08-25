@@ -1,10 +1,13 @@
-# Storyblok quick starter project
+# Junges Orchester Auenland
 
-Welcome to this sample project for Next.js!
-This project serves as a quick starter for integrating Storyblok, a headless CMS, into your web development projects.
+To make the proxy work you need a localhost-key.pem and a localhost.pem file
+to get a certificate for the storyblok preview. This is required because
+Storyblok only allows Secured https pages to be used as preview.
 
-For starting, you can access to the `JOA` folder.
-In the folder you have some files like:
+## Run Frontend dev
 
-- `pages/_app.js`: the configuration with Storyblok API;
-- `pages/index.js`: the initialization of the Storyblok Bridge.
+<code>npm run dev</code>
+
+## Run Proxy for Storyblok preview
+
+<code>npm run poxy</code>

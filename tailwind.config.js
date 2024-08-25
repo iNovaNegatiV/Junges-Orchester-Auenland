@@ -8,6 +8,12 @@ module.exports = {
       background: "#DFF0D8",
       foreground: "#397901",
       decoration: "#273385",
+      white: "#FFFFFF",
+      black: "#000000",
+      darkGray: "#585858",
+      lightGray: "#D3D3D3",
+      brightOrange: "#FFAC1C",
+      lightBlue: "#0062b3",
     },
     screens: {
       sphone: { max: "640px" },

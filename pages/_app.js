@@ -12,6 +12,10 @@ import DonationGraph from "../components/dynamic/DonationGraph";
 import Anker from "../components/dynamic/Anker";
 import RichText from "../components/dynamic/RichText";
 import Form from "../components/dynamic/Form";
+import FormInput from "../components/dynamic/FormInput";
+import FormRow from "../components/dynamic/FormRow";
+import GoogleMapBlok from "../components/dynamic/GoogleMapBlok";
+import CookieSelect from "../components/dynamic/CookieSelect";
 
 const layouts = {
   page: Page,
@@ -29,6 +33,10 @@ const customComponents = {
   donation_graph: DonationGraph,
   anker: Anker,
   form: Form,
+  form_row: FormRow,
+  form_input: FormInput,
+  map: GoogleMapBlok,
+  cookie_select: CookieSelect,
 };
 
 export const components = {
