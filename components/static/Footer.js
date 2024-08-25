@@ -68,7 +68,7 @@ const Footer = ({}) => {
             </a>
           ))}
       </div>
-      <div className={containerStyle.concat(" grow")}>
+      <div className={containerStyle.concat(" desktop:grow")}>
         <h4 className={headlineStyle}>Hilfe bekommen</h4>
         {slugs
           .filter((slug) => slug.content.footer_category === "help")
@@ -85,7 +85,9 @@ const Footer = ({}) => {
           ))}
       </div>
       <div className={containerStyle}>
-        <h4 className={headlineStyle}>Folgt uns auf Social Media</h4>
+        <h4 className={headlineStyle.concat(" after:w-full")}>
+          Soziale Medien
+        </h4>
         <div className={"flex flex-row gap-5"}>
           <a
             className={"no-link-decoration rounded-full bg-lightBlue p-2"}

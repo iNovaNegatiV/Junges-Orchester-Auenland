@@ -9,7 +9,7 @@ const CookieBanner = ({ inlineElement = false }) => {
   const excludedPaths = ["/cookies", "/impressum", "/datenschutz"];
   const { consentGiven, storeConsent } = useContext(CookieContext);
   const consentButtonStyle =
-    "bg-darkGray border rounded text-white w-full text-center p-3";
+    "bg-darkGray rounded text-white w-full text-center p-3";
 
   const showBanner = useMemo(() => {
     if (
@@ -60,7 +60,7 @@ const CookieBanner = ({ inlineElement = false }) => {
             {!inlineElement ? (
               <button
                 className={consentButtonStyle.concat(
-                  " bg-lightGray text-black"
+                  " bg-lightGray !text-black"
                 )}
                 onClick={() => router.push("cookies")}
               >

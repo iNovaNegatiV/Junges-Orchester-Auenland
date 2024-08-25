@@ -1,0 +1,2 @@
+FROM caddy:latest
+COPY ./Docker/Proxy/prod/Caddyfile /etc/caddy/Caddyfile

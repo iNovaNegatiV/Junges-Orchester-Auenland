@@ -1,0 +1,34 @@
+services:
+  caddy-service-dev:
+    container_name: caddy-service-dev
+    build:
+      dockerfile: ./Docker/Proxy/Dockerfile.dev
+    restart: unless-stopped
+    ports:
+      - 443:443
+      - 80:80
+    profiles:
+      - develop
+
+  caddy-service-prod:
+    container_name: caddy-service-prod
+    build:
+      dockerfile: ./Docker/Proxy/Dockerfile.prod
+    restart: unless-stopped
+    ports:
+      - 443:443
+      - 80:80
+    profiles:
+      - production
+
+  nextjs:
+    container_name: nextjs
+    build:
+      dockerfile: ./Docker/Frontend/Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - caddy-service-prod
+    profiles:
+      - production

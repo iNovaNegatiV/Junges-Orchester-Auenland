@@ -1,0 +1,5 @@
+justus-krebsfaenger.de {
+    handle_path /* {
+        reverse_proxy nextjs:3000
+    }
+}
