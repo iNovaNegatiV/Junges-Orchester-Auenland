@@ -107,7 +107,6 @@ const Navigation = ({}) => {
   }
 
   async function updateSlugs() {
-    console.log("Update!");
     let sbParams = {
       version: "draft",
     };

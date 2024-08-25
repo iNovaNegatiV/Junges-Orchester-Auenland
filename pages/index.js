@@ -6,21 +6,26 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 import Layout from "../components/static/Layout";
+import CookieBanner from "../components/static/CookieBanner";
+import { CookieProvider } from "../context/CookieContext";
 
 export default function Home({ story }) {
   story = useStoryblokState(story);
 
   return (
-    <div className="h-full">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{story ? "JOA | " + story.name : "StoryBlok Test"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout>
-        <StoryblokComponent blok={story.content} key={story.uuid} />
-      </Layout>
-    </div>
+    <CookieProvider>
+      <div className="h-full">
+        <CookieBanner />
+        <Head>
+          <meta charSet="utf-8" />
+          <title>{story ? "JOA | " + story.name : "StoryBlok Test"}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Layout>
+          <StoryblokComponent blok={story.content} key={story.uuid} />
+        </Layout>
+      </div>
+    </CookieProvider>
   );
 }
 

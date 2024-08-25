@@ -1,27 +1,32 @@
+import { CookieProvider } from "../context/CookieContext";
 import { getStoryblokApi, StoryblokComponent } from "@storyblok/react";
 import Head from "next/head";
 import Layout from "../components/static/Layout";
+import CookieBanner from "../components/static/CookieBanner";
 
 export default function Page({ story }) {
   return (
-    <div className="h-full">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{story ? story.name : "StoryBlok Test"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout>
-        <div>
-          {story.content.body ? (
-            story.content.body.map((nestedBlok) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-            ))
-          ) : (
-            <div></div>
-          )}
-        </div>
-      </Layout>
-    </div>
+    <CookieProvider>
+      <div className="h-full">
+        <CookieBanner />
+        <Head>
+          <meta charSet="utf-8" />
+          <title>{story ? story.name : "StoryBlok Test"}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Layout>
+          <div>
+            {story.content.body ? (
+              story.content.body.map((nestedBlok) => (
+                <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+              ))
+            ) : (
+              <div></div>
+            )}
+          </div>
+        </Layout>
+      </div>
+    </CookieProvider>
   );
 }
 
