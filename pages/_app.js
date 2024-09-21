@@ -5,7 +5,6 @@ import Media from "../components/dynamic/Media";
 import Headline from "../components/dynamic/Headline";
 import PageLayout from "../components/dynamic/PageLayout";
 import Teaser from "../components/dynamic/Teaser";
-import Markdown from "../components/dynamic/Markdown";
 import Grid2x2 from "../components/dynamic/Grid";
 import VerticalSpace from "../components/dynamic/VerticalSpace";
 import DonationGraph from "../components/dynamic/DonationGraph";
@@ -16,6 +15,7 @@ import FormInput from "../components/dynamic/FormInput";
 import FormRow from "../components/dynamic/FormRow";
 import GoogleMapBlok from "../components/dynamic/GoogleMapBlok";
 import CookieSelect from "../components/dynamic/CookieSelect";
+import Carousel from "../components/dynamic/Carousel";
 
 const layouts = {
   page: Page,
@@ -24,19 +24,19 @@ const layouts = {
 };
 
 const customComponents = {
-  teaser: Teaser,
-  media: Media,
-  headline: Headline,
-  richtext: RichText,
-  markdowntext: Markdown,
-  "grid-2-2": Grid2x2,
-  donation_graph: DonationGraph,
   anker: Anker,
+  carousel: Carousel,
+  cookie_select: CookieSelect,
+  donation_graph: DonationGraph,
   form: Form,
   form_row: FormRow,
   form_input: FormInput,
+  "grid-2-2": Grid2x2,
+  headline: Headline,
   map: GoogleMapBlok,
-  cookie_select: CookieSelect,
+  media: Media,
+  richtext: RichText,
+  teaser: Teaser,
 };
 
 export const components = {

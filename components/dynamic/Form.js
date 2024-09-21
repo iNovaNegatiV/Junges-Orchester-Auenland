@@ -58,9 +58,7 @@ const Form = ({ blok }) => {
       }),
     });
 
-    if (response.status === 200 && response.ok) {
-      handleFinalAction();
-    }
+    if (response.status === 200 && response.ok) handleFinalAction();
   }
 
   return (

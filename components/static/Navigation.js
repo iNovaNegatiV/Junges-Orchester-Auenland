@@ -1,77 +1,70 @@
-import { useEffect, useMemo, useState } from "react";
-import { ArrowRightIcon, CloseIcon, CompanyLogo, HamburgerIcon } from "./Icons";
-import { getStaticProps } from "../../pages";
+import { useEffect, useState } from "react";
+import { ArrowRightIcon, CloseIcon, HamburgerIcon } from "./Icons";
 import { getStoryblokApi } from "@storyblok/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
 
-const ListElements = ({ slugs, currentSlug, currentScrollId }) => {
-  return (
-    <>
-      {slugs.map((slug) => {
-        if (slug.content.areas && slug.content.areas.length > 0) {
-          return (
-            <DropDownListElement
-              key={slug.id}
-              name={slug.name}
-              baseLink={`/${slug.slug}`}
-              bullets={slug.content.areas.map((area) => {
-                return {
-                  id: area._uid,
-                  name: area.name,
-                  link: `#${area.name.toLowerCase()}`,
-                };
-              })}
-              slug={slug}
-              currentSlug={currentSlug}
-              currentScrollId={currentScrollId}
-            />
-          );
-        }
-        return (
-          <li key={slug.id} className={"bullet"}>
-            <a
-              className={currentSlug === slug.slug ? "active-route" : ""}
-              href={`/${slug.slug}`}
-            >
-              {slug.name}
-            </a>
-          </li>
-        );
-      })}
-    </>
-  );
+const ListElements = ({ navigationConfig, currentSlug, currentScrollId }) => {
+  return navigationConfig.navigation_links.map((mainLink) => {
+    if (mainLink.navigation_sublinks.length > 0) {
+      return (
+        <DropDownListElement
+          key={mainLink._uid}
+          name={mainLink.label}
+          baseLink={mainLink.link.cached_url}
+          bullets={mainLink.navigation_sublinks}
+          currentSlug={currentSlug}
+          currentScrollId={currentScrollId}
+        />
+      );
+    }
+    return (
+      <li key={mainLink._uid} className={"bullet"}>
+        <Link
+          href={mainLink.link.cached_url}
+          className={
+            currentSlug === mainLink.link.cached_url ? "active-route" : ""
+          }
+        >
+          {mainLink.label}
+        </Link>
+      </li>
+    );
+  });
 };
 
 const DropDownListElement = ({
   name,
   baseLink,
   bullets,
-  slug,
   currentSlug,
   currentScrollId,
 }) => {
   return (
     <li className="multiple-nav-list-element relative">
-      <a
+      <Link
         href={baseLink}
-        className={currentSlug === slug.slug ? "active-route" : ""}
+        className={"before:content-arrowDownIcon before:absolute before:right-[-25px] ".concat(
+          currentSlug === baseLink ? "active-route" : ""
+        )}
       >
         {name}
-      </a>
-      <ul className={`bullet-list flex flex-col gap-2 p-4 absolute hidden`}>
+      </Link>
+      <ul className={`bullet-list flex-col gap-2 p-4 absolute hidden`}>
         {bullets.map((bullet) => (
-          <li key={bullet.id} className={"bullet flex flex-row gap-5"}>
+          <li key={bullet._uid} className={"bullet flex flex-row gap-5"}>
             <ArrowRightIcon size={15} />
-            <a
+            <Link
               className={`${
-                currentScrollId === bullet.name.toLowerCase()
+                currentScrollId === bullet.link.anchor
                   ? "!text-[#273385] !important"
                   : ""
               }`}
-              href={baseLink + bullet.link}
+              href={baseLink.concat("#", bullet.link.anchor)}
             >
-              {bullet.name}
-            </a>
+              {bullet.label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -79,66 +72,48 @@ const DropDownListElement = ({
   );
 };
 
-const Navigation = ({}) => {
+const Navigation = () => {
   const router = useRouter();
-  const [slugs, setSlugs] = useState([]);
   const [expanded, setExpanded] = useState(false);
-  const currentSlug = useMemo(() => getCurrentSlug(), [slugs]);
-  const currentScrollId = useMemo(() => getCurrentScrollId(), [slugs]);
-
-  function getCurrentSlug() {
-    const url = router.asPath;
-    let currentSlug = "";
-    slugs.forEach((slug) => {
-      if (url.includes(slug.slug)) {
-        currentSlug = slug.slug;
-        return;
-      }
-    });
-    return currentSlug;
-  }
-
-  function getCurrentScrollId() {
-    let currentScrollId = "";
-    const scrollId = router.asPath;
-    if (!scrollId.includes("#")) return currentScrollId;
-    currentScrollId = scrollId.split("#")[1];
-    return currentScrollId;
-  }
-
-  async function updateSlugs() {
-    let sbParams = {
-      version: "draft",
-    };
-
-    const storyblokApi = getStoryblokApi();
-    let { data } = await storyblokApi.get(`cdn/stories`, sbParams);
-    setSlugs(
-      data.stories
-        .sort((a, b) => {
-          return a.content.sort - b.content.sort;
-        })
-        .filter((slug) => slug.content.show_navigation)
-    );
-  }
+  const [navigationConfig, setNavigationConfig] = useState(null);
+  const [currentSlug, setCurrentSlug] = useState("");
+  const [currentScrollId, setCurrentScrollId] = useState("");
 
   useEffect(() => {
-    updateSlugs();
+    let scrollId = "";
+    let slug = router.asPath;
+
+    if (slug.startsWith("/")) slug = slug.substring(1, slug.length);
+    if (slug === "") slug = "home";
+    if (slug.includes("#")) scrollId = slug.split("#")[1];
+
+    setCurrentScrollId(scrollId);
+    setCurrentSlug(slug);
+  }, [router.asPath]);
+
+  useEffect(() => {
+    getNavigationConfig().then((data) =>
+      setNavigationConfig(data.story.content)
+    );
   }, []);
+
+  if (navigationConfig === null) return <div></div>;
 
   return (
     <nav className="nav flex flex-row justify-between items-center p-10">
-      <a className={"no-link-decoration"} href="/">
-        <img
+      <Link className={"no-link-decoration"} href="/">
+        <Image
           className={"pr-10 phone:w-3/4"}
           alt="Junges Orchester Auenland e.V. Logo"
           src="/assets/images/logo.png"
+          width={300}
+          height={0}
           style={{ maxWidth: "15rem", minWidth: "6rem", height: "auto" }}
         />
-      </a>
+      </Link>
       <div
         className={
-          "nav-mobile hidden phone:flex justify-between flex-row flex-wrap gap-5"
+          "nav-mobile hidden phone:flex tablet:flex justify-between flex-row flex-wrap gap-5"
         }
       >
         <button
@@ -148,7 +123,7 @@ const Navigation = ({}) => {
           <HamburgerIcon size={40} />
         </button>
         <div
-          className={`phone-nav-expanded fixed h-screen w-screen flex-col p-10 text-center  ${
+          className={`phone-nav-expanded fixed h-screen w-screen flex-col p-10 text-center z-50  ${
             expanded ? "flex" : "hidden"
           }`}
         >
@@ -157,7 +132,7 @@ const Navigation = ({}) => {
           </button>
           <ul className="flex flex-col items-center flex-wrap gap-5">
             <ListElements
-              slugs={slugs}
+              navigationConfig={navigationConfig}
               currentSlug={currentSlug}
               currentScrollId={currentScrollId}
             />
@@ -169,30 +144,43 @@ const Navigation = ({}) => {
               }
             >
               <li>
-                <a href="/kontakt">Kontakt</a>
+                <Link href="/kontakt">Kontakt</Link>
               </li>
               <li>
-                <a href="/cookies">Cookies</a>
+                <Link href="/cookies">Cookies</Link>
               </li>
               <li>
-                <a href="/datenschutz">Datenschutz</a>
+                <Link href="/datenschutz">Datenschutz</Link>
               </li>
               <li>
-                <a href="/impressum">Impressum</a>
+                <Link href="/impressum">Impressum</Link>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <ul className="nav-desktop hidden desktop:flex tablet:flex flex-row justify-end items-center flex-wrap gap-5">
+      <ul className="nav-desktop hidden desktop:flex flex-row justify-end items-center flex-wrap gap-10">
         <ListElements
-          slugs={slugs}
+          navigationConfig={navigationConfig}
           currentSlug={currentSlug}
           currentScrollId={currentScrollId}
         />
       </ul>
     </nav>
   );
+};
+
+const getNavigationConfig = async () => {
+  let sbParams = {
+    version: "draft", // or 'published'
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(
+    `cdn/stories/configs/navigations-konfiguration`,
+    sbParams
+  );
+  return data;
 };
 
 export default Navigation;

@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { LoadingIcon } from "../static/Icons";
+
 const FormInput = ({ blok, setFormValue }) => {
+  const [loading, setLoading] = useState(false);
+
   const classes = `
     w-full border p-2 rounded focus:outline-none 
     focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -28,10 +33,20 @@ const FormInput = ({ blok, setFormValue }) => {
     <div className={"w-full flex flex-col gap-1"}>
       {blok.type === "button" ? (
         <button
-          className="w-fit flex items-center px-20 py-2 bg-[#273385] text-[#FFFFFF] rounded-full"
+          className="w-fit flex items-center px-20 py-2 bg-[#273385] text-[#FFFFFF] rounded-full relative"
           type="submit"
+          onClick={() => setLoading(true)}
         >
           {blok.label}
+          {loading && (
+            <div
+              className={
+                "absolute inset-0 m-auto grid items-center justify-center blur-md w-full h-full"
+              }
+            >
+              <LoadingIcon size={35} />
+            </div>
+          )}
         </button>
       ) : blok.type === "textarea" ? (
         <>

@@ -39,6 +39,23 @@ a:hover::after {
   display: none !important;
 }
 
+.richtext-right {
+  display: block;
+  text-align: right;
+}
+
+.richtext-center {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .richtext-right,
+  .richtext-center {
+    text-align: left !important;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -72,18 +89,4 @@ h5 {
 
 h6 {
   font-size: 12px !important;
-}
-
-@media screen and (max-width: 768px) {
-  * {
-    font-size: 14px !important;
-  }
-
-  h1 {
-    font-size: 28px !important;
-  }
-
-  h2 {
-    font-size: 24px !important;
-  }
 }

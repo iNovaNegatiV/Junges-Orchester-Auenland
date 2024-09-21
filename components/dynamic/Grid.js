@@ -21,17 +21,22 @@ const Grid2x2 = ({ blok }) => {
     return "order-" + orderNumber;
   }
 
-  function getAlignmentByIndex(index) {
-    let alignment = "justify-start";
-    if (index == 1 || index == 3) {
-      alignment = "justify-end";
-    }
-    return alignment;
-  }
-
   return (
     <div
-      className={`grid grid-cols-2 items-center ${blok.gap_x} ${blok.gap_y} phone:grid-cols-1 phone:grid-rows-4 phone:grid-rows-none`}
+      className={`
+        grid grid-cols-2 grid-rows-2 
+        auto-rows-max items-center relative
+        phone:grid-cols-1 phone:grid-rows-none phone:before:!hidden phone:after:!hidden
+        ${
+          blok.show_x_border
+            ? "after:content-[''] after:block after:absolute after:rounded-lg after:h-1 after:w-full after:inset-x-0 after:inset-y-0 after:m-auto after:bg-decoration"
+            : ""
+        }
+        ${
+          blok.show_y_border
+            ? "before:content[''] before:block before:absolute before:w-1 before:h-full before:inset-x-0 before:inset-y-0 before:m-auto before:bg-decoration"
+            : ""
+        }`}
     >
       {blok.content.map((component, index) => {
         const order = getOrderByIndex(
@@ -39,11 +44,17 @@ const Grid2x2 = ({ blok }) => {
           blok.swap_last_row,
           index
         );
-        const alignment = getAlignmentByIndex(index);
+
         return (
           <div
             key={component._uid}
-            className={`${blok.column_width} ${alignment} phone:w-full flex m-auto phone:${order}`}
+            className={`
+            flex m-auto
+            ${blok.padding_x} 
+            ${blok.padding_y} 
+            ${blok.column_width} 
+            ${index % 2 === 0 ? "justify-start" : "justify-center"} 
+            phone:w-full phone:!px-0 phone:!justify-center phone:${order}`}
           >
             <StoryblokComponent blok={component} key={component._uid} />
           </div>

@@ -82,7 +82,9 @@ const CookieBanner = ({ inlineElement = false }) => {
               <strong>
                 {consentGiven === "accepted"
                   ? " AKZEPTIERT."
-                  : " NICHT AKZEPTIERT."}
+                  : consentGiven === "declined"
+                  ? " NICHT AKZEPTIERT."
+                  : " NICHT AUSGEWÄHLT."}
               </strong>
             </p>
           </div>

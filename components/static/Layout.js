@@ -1,5 +1,7 @@
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import { getStoryblokApi } from "@storyblok/react";
+import { useEffect, useState } from "react";
 
 const Layout = ({ children }) => {
   return (

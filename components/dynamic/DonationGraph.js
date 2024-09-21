@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 const DonationGraph = ({ blok }) => {
@@ -7,8 +8,11 @@ const DonationGraph = ({ blok }) => {
 
   return (
     <div ref={ref} className={`donation-graph w-full relative`}>
-      <img
+      <Image
         src={blok.background_image.filename}
+        alt={blok.background_image.alt}
+        width={200}
+        height={0}
         className={`m-auto w-2/4 bg-transparent relative z-20`}
       />
       <div

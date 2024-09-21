@@ -54,10 +54,28 @@ export const ArrowRightIcon = ({ size }) => (
   />
 );
 
+export const ArrowLeftIcon = ({ size }) => (
+  <Image
+    alt="Arrow Left Icon"
+    src="/assets/icons/arrow-left-icon.svg"
+    width={size}
+    height={size}
+  />
+);
+
 export const ArrowRightAnkerIcon = ({ size }) => (
   <Image
     alt="Arrow Right Anker Icon"
     src="/assets/icons/arrow-right-anker.svg"
+    width={size}
+    height={size}
+  />
+);
+
+export const LoadingIcon = ({ size }) => (
+  <Image
+    alt="Loading Icon"
+    src="/assets/icons/loading-icon.svg"
     width={size}
     height={size}
   />

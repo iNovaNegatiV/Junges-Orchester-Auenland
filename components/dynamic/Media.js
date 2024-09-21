@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Media = ({ blok }) => {
   const borderRadius =
     blok.type === "none"
@@ -8,25 +10,41 @@ const Media = ({ blok }) => {
       ? "rounded-full"
       : "rounded-none";
   return blok.image_signature ? (
-    <div className={`phone:w-full h-full flex flex-col gap-2`}>
-      <img
+    <div className={`h-full flex flex-col gap-2 !phone:w-full`}>
+      <Image
         className={`h-auto phone:w-full ${borderRadius}`}
         src={blok.image.filename}
         alt={blok.image.alt}
         title={blok.image.title}
-        width={blok.width && blok.width > 0 ? blok.width : "100%"}
+        height={0}
+        width={1920}
+        style={
+          blok.width > 0
+            ? {
+                width: blok.width + "px",
+              }
+            : {}
+        }
       />
       <p className={`text-xs text-[#397901] ${blok.signature_position}`}>
         {blok.image.title}
       </p>
     </div>
   ) : (
-    <img
-      className={`h-auto phone:w-full ${borderRadius}`}
+    <Image
+      className={`h-auto !phone:w-full ${borderRadius}`}
       src={blok.image.filename}
       alt={blok.image.alt}
       title={blok.image.title}
-      width={blok.width && blok.width > 0 ? blok.width : "100%"}
+      height={0}
+      width={1920}
+      style={
+        blok.width > 0
+          ? {
+              width: blok.width + "px",
+            }
+          : {}
+      }
     />
   );
 };

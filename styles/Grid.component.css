@@ -4,7 +4,7 @@
   height: auto !important;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .grid nth-child(3) {
     border: 2px solid blue;
   }

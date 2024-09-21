@@ -2,109 +2,119 @@ import { useEffect, useMemo, useState } from "react";
 import { FacebookIcon, InstagramIcon } from "./Icons";
 import { getStoryblokApi } from "@storyblok/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
 
-const Footer = ({}) => {
+const Footer = () => {
   const router = useRouter();
-  const [slugs, setSlugs] = useState([]);
-  const currentSlug = useMemo(() => getCurrentSlug(), [slugs]);
+  const [currentSlug, setCurrentSlug] = useState("");
+  const [footerConfig, setFooterConfig] = useState(null);
 
-  const containerStyle = "flex flex-col gap-4";
+  const containerStyle = "flex flex-col flex-grow gap-4 items-start";
   const headlineStyle =
-    "text-lightBlue no-underline after:content-[''] after:block after:mt-2 after:mb-3 after:h-px after:bg-decoration after:w-20";
-  const ankerStyle = "w-fit";
-
-  function getCurrentSlug() {
-    const url = router.asPath;
-    let currentSlug = "home";
-    slugs.forEach((slug) => {
-      if (url.includes(slug.slug)) {
-        currentSlug = slug.slug;
-        return;
-      }
-    });
-
-    return currentSlug;
-  }
-
-  async function updateSlugData() {
-    let sbParams = {
-      version: "draft",
-    };
-
-    const storyblokApi = getStoryblokApi();
-    let { data } = await storyblokApi.get(`cdn/stories`, sbParams);
-    setSlugs(
-      data.stories
-        .sort((a, b) => {
-          return a.content.sort - b.content.sort;
-        })
-        .filter((slug) => slug.content.show_footer)
-    );
-  }
+    "text-lightBlue no-underline after:content-[''] after:block after:mt-2 after:mb-3 after:h-px after:bg-decoration after:w-full";
 
   useEffect(() => {
-    updateSlugData();
+    let slug = router.asPath;
+    if (slug.startsWith("/")) slug = slug.substring(1, slug.length);
+    if (slug === "") slug = "home";
+    if (slug.includes("#")) slug = slug.split("#")[0];
+    setCurrentSlug(slug);
+  }, [router.asPath]);
+
+  useEffect(() => {
+    getFooterConfig().then((data) => setFooterConfig(data.story.content));
   }, []);
+
+  if (footerConfig === null) return <div></div>;
 
   return (
     <footer
       className={
-        "w-full flex phone:flex-col gap-24 phone:px-10 justify-between bg-background text-foreground px-24 py-16"
+        "w-full flex flex-wrap justify-between gap-24 bg-background text-foreground px-24 py-16 tablet:px-16 phone:px-10"
       }
     >
-      <div className={containerStyle}>
-        <h4 className={headlineStyle}>Der Verein</h4>
-        {slugs
-          .filter((slug) => slug.content.footer_category === "association")
-          .map((slug) => (
-            <a
-              key={slug.uuid}
-              href={`/${slug.slug}`}
-              className={ankerStyle.concat(
-                currentSlug === slug.slug ? " active-route" : ""
-              )}
+      {footerConfig.entries.map((entry) => (
+        <div key={entry._uid} className={containerStyle}>
+          <h4 className={headlineStyle}>{entry.headline}</h4>
+          {entry.links.map((link) => (
+            <Link
+              key={link._uid}
+              href={link.link.cached_url}
+              className={
+                currentSlug === link.link.cached_url
+                  ? "w-fit active-route"
+                  : "w-fit"
+              }
             >
-              {slug.name}
-            </a>
+              {link.label}
+            </Link>
           ))}
-      </div>
-      <div className={containerStyle.concat(" desktop:grow")}>
-        <h4 className={headlineStyle}>Hilfe bekommen</h4>
-        {slugs
-          .filter((slug) => slug.content.footer_category === "help")
-          .map((slug) => (
-            <a
-              key={slug.uuid}
-              href={`/${slug.slug}`}
-              className={ankerStyle.concat(
-                currentSlug === slug.slug ? " active-route" : ""
-              )}
-            >
-              {slug.name}
-            </a>
-          ))}
-      </div>
+        </div>
+      ))}
       <div className={containerStyle}>
         <h4 className={headlineStyle.concat(" after:w-full")}>
           Soziale Medien
         </h4>
         <div className={"flex flex-row gap-5"}>
-          <a
-            className={"no-link-decoration rounded-full bg-lightBlue p-2"}
-            href="https://www.instagram.com/jungesorchesterauenland/"
-          >
-            <InstagramIcon size={28} />
-          </a>
-          <a
-            className={"no-link-decoration rounded-full bg-lightBlue p-2"}
-            href="https://www.facebook.com/JungesOrchesterAuenland/?locale=de_DE"
-          >
-            <FacebookIcon size={28} />
-          </a>
+          {footerConfig.social_media_icons.map((iconData) => {
+            return (
+              <Link
+                key={iconData._uid}
+                href={iconData.link.url}
+                target={iconData.link.target}
+                className={"no-link-decoration rounded-full bg-lightBlue p-2"}
+                width={35}
+                height={35}
+              >
+                <Image
+                  alt={iconData.icon.alt}
+                  title={iconData.icon.title}
+                  src={iconData.icon.filename}
+                  width={35}
+                  height={35}
+                  className={"min-w-10"}
+                />
+              </Link>
+            );
+          })}
         </div>
       </div>
     </footer>
   );
+};
+
+/*
+  Insert in the last div of the footer element to render an image
+  <div className={containerStyle.concat(" justify-center")}>
+    <Link
+    href={footerConfig.logo[0].link.cached_url}
+    target={footerConfig.logo[0].link.target}
+    className={"no-link-decoration"}
+    >
+      <Image
+      alt={footerConfig.logo[0].icon.alt}
+      title={footerConfig.logo[0].icon.title}
+      src={footerConfig.logo[0].icon.filename}
+      width={200}
+      height={50}
+      className={"min-w-40"}
+      />
+    </Link>
+  </div>
+*/
+
+const getFooterConfig = async () => {
+  let sbParams = {
+    version: "draft", // or 'published'
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(
+    `cdn/stories/configs/footer-konfiguration`,
+    sbParams
+  );
+  return data;
 };
 
 export default Footer;
