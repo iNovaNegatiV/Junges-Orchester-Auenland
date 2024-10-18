@@ -1,0 +1,38 @@
+{
+  "name": "footer_link",
+  "display_name": null,
+  "created_at": "2024-09-20T22:45:47.176Z",
+  "updated_at": "2024-09-25T12:28:20.606Z",
+  "id": 6318790,
+  "schema": {
+    "label": {
+      "type": "text",
+      "pos": 0,
+      "key": "label",
+      "required": true,
+      "max_length": 50,
+      "display_name": "Text"
+    },
+    "link": {
+      "type": "multilink",
+      "pos": 1,
+      "required": true,
+      "show_anchor": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": "<div>\n<p class=\"font-20\">{{it.label}}</p>\n</div>",
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "footer_link",
+  "component_group_uuid": "58960e2d-cad4-49dc-85cf-48da321093b0",
+  "color": "#ff6159",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Footer"
+}

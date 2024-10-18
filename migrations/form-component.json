@@ -1,0 +1,103 @@
+{
+  "name": "form",
+  "display_name": null,
+  "created_at": "2024-08-06T23:25:06.405Z",
+  "updated_at": "2024-09-21T08:06:50.933Z",
+  "id": 6137378,
+  "schema": {
+    "position": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "16c7e890-b16e-4d5f-b53e-f57134903863",
+          "name": "Links",
+          "value": "0"
+        },
+        {
+          "_uid": "67dfd41d-e27b-4b99-940f-41cfd1a223af",
+          "value": "auto",
+          "name": "Mittig"
+        },
+        {
+          "_uid": "42a11588-c2f2-4e6b-babc-230d142b2896",
+          "value": "0 0 0 auto",
+          "name": "Rechts"
+        }
+      ],
+      "required": false,
+      "default_value": "0"
+    },
+    "action": {
+      "type": "option",
+      "pos": 1,
+      "use_uuid": true,
+      "required": true,
+      "options": [
+        {
+          "_uid": "27e1df99-c7f1-4881-b176-eaaa71a0d1e7",
+          "name": "Kontakt Email",
+          "value": "mail_contact"
+        },
+        {
+          "_uid": "bc4d370a-4826-46e7-ba82-63dd35ebd0c1",
+          "value": "mail_membership",
+          "name": "Mitgliedschafts Email"
+        }
+      ],
+      "display_name": "Aktion"
+    },
+    "theme": {
+      "type": "custom",
+      "pos": 2,
+      "display_name": "Farbpalette",
+      "field_type": "storyblok-palette",
+      "options": [
+        {
+          "name": "size",
+          "value": "",
+          "_uid": "775a395a-8a1e-4a77-9895-2e81fa47e597"
+        },
+        {
+          "name": "defaultValue",
+          "value": "#DFF0D8",
+          "_uid": "18f88beb-38a7-44f6-9c21-18fd333fe00a"
+        },
+        {
+          "name": "colors",
+          "value": "[\"#DFF0D8\", \"#397901\", \"#273385\", \"#FFFFFF\"]",
+          "_uid": "664b4738-5365-4425-b8c2-cce450294052"
+        }
+      ]
+    },
+    "fields": {
+      "type": "bloks",
+      "pos": 3,
+      "minimum": 1,
+      "maximum": 20,
+      "required": true,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "form_row"
+      ],
+      "display_name": "Eingabefelder"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "form",
+  "component_group_uuid": "178f8d28-aa30-45cb-a6b5-d4af96c76cba",
+  "color": "#2db47d",
+  "icon": "block-1-2block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Forms"
+}

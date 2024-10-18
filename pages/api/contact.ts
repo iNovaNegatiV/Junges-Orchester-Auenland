@@ -1,6 +1,10 @@
 import nodemailer, { SentMessageInfo } from "nodemailer";
 import type { NextApiRequest, NextApiResponse } from "next";
 
+const applyXSSprotection: (text: string) => string = (text: string) => {
+  return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+};
+
 const port: number = parseInt(process.env.MAIL_PORT) || 587;
 const hostname: string = process.env.MAIL_HOSTNAME;
 const mail: string = process.env.MAIL_USER_NAME;
@@ -32,16 +36,19 @@ const SEND = async (
     subject,
     text: message,
     html: `
-      <h2>Sie haben eine Nachricht von <strong>${name} ${surname}</strong> erhalten!</h2>
+      <h2>Sie haben eine Nachricht von <strong>${applyXSSprotection(
+        name
+      )} ${applyXSSprotection(surname)}</strong> erhalten!</h2>
       <p>Diese Nachricht wurde über die Webseite des JOA versendet!</p>
       <h3>Email zur Kontaktaufnahme:</h3>
-      <p>${user_mail}</p>
+      <a href="mailto: ${applyXSSprotection(user_mail)}">${applyXSSprotection(
+      user_mail
+    )}</a>
       </br> 
       <h3>Nachricht:</h3>
-      <p>${message}</p>
+      <p>${applyXSSprotection(message)}</p>
       <br/><br/>
-    `.concat(customInformation),
-    headers: { "x-myheader": "test header" },
+    `.concat(applyXSSprotection(customInformation)),
   });
 };
 
@@ -49,33 +56,50 @@ const HANDLER = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     POST(req, res);
   }
+
+  res.json({
+    status: 404,
+    message: "YOUR METHOD IS NOT ALLOWED HERE!",
+  });
 };
 
 const POST = async (req: NextApiRequest, res: NextApiResponse) => {
-  const data: { [key: string]: string } = req.body;
+  let data: {
+    first_name: string;
+    last_name: string;
+    subject: string;
+    email: string;
+    text: string;
+    other: string;
+  } = {
+    first_name: "",
+    last_name: "",
+    subject: "",
+    email: "",
+    text: "",
+    other: "",
+  };
 
-  let receiver_mail: string = "";
-  let subject: string = "";
-  let message: string = "";
-  let name: string = "";
-  let surname: string = "";
-  let customInformation: string = "<h3>Zusatzinformationen</h3>";
-
-  for (const [key, value] of Object.entries(data)) {
-    if (key.includes("subject_")) {
-      subject = value;
-    } else if (key.includes("mail_")) {
-      receiver_mail = value;
-    } else if (key.includes("text_")) {
-      message = value;
-    } else if (key.includes("surname_")) {
-      surname = value;
-    } else if (key.includes("name_")) {
-      name = value;
-    } else {
-      customInformation.concat(`<br/><br/><h3>${key}</h3><br/><p>${value}</p>`);
-    }
+  try {
+    data = req.body;
+  } catch (e) {
+    res.json({
+      status: 403,
+      message: "WRONG DATA FORMAT!",
+    });
+    return;
   }
+
+  let receiver_mail: string = data.email;
+  let subject: string = data.subject;
+  let message: string = data.text;
+  let name: string = data.first_name;
+  let surname: string = data.last_name;
+  let customInformation: string = `
+    <h3>Zusatzinformationen</h3>
+    <br/>
+    <p>${data.other}</p>
+  `;
 
   // Send Mail and respond
   let respondStatus = 200;

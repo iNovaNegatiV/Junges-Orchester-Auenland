@@ -4,13 +4,13 @@
 @import "_global.css";
 
 /* Static components */
-@import "Layout.component.css";
-@import "Navigation.component.css";
+@import "./components/Layout.component.css";
+@import "./components/Navigation.component.css";
 
 /* Dynamic Components */
-@import "Teaser.component.css";
-@import "Grid.component.css";
-@import "DonationGraph.component.css";
+@import "./components/Teaser.component.css";
+@import "./components/Grid.component.css";
+@import "./components/DonationGraph.component.css";
 
 /* Tailwind base */
 @tailwind base;

@@ -1,0 +1,23 @@
+{
+  "name": "cookie_select",
+  "display_name": "Cookie Element",
+  "created_at": "2024-08-25T12:02:30.026Z",
+  "updated_at": "2024-09-21T08:03:48.235Z",
+  "id": 6206891,
+  "schema": {},
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Cookie Element",
+  "component_group_uuid": "479299ec-dafe-40c9-9aac-3174e2533095",
+  "color": "#ff6159",
+  "icon": "block-sticker",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Custom Elements"
+}

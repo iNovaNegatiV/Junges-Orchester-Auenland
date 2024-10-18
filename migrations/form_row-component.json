@@ -1,0 +1,36 @@
+{
+  "name": "form_row",
+  "display_name": null,
+  "created_at": "2024-08-07T14:04:56.899Z",
+  "updated_at": "2024-10-01T08:55:23.828Z",
+  "id": 6140057,
+  "schema": {
+    "fields": {
+      "type": "bloks",
+      "pos": 0,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "form_input"
+      ],
+      "minimum": 1,
+      "required": true,
+      "display_name": "Eingabefelder"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "form_row",
+  "component_group_uuid": "178f8d28-aa30-45cb-a6b5-d4af96c76cba",
+  "color": "#2db47d",
+  "icon": "block-1-2block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Forms"
+}

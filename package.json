@@ -5,10 +5,14 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+    "dev": "next dev",
+    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "dev-with-ssl": "npm-run-all -p -r proxy dev",
+    "build": "next build",
+    "login": "storyblok login --token Mxg5c5sOC9FIGk2UvTer9wtt-252522-FTsgyZEB8tRcWVKTEcTs --region eu",
+    "pull-sb-components": "storyblok pull-components --space 296757 --path=./migrations/ --separate-files --file-name=component",
+    "generate-sb-types": "node ./scripts/generate-storyblok-types/script.mjs"
   },
   "dependencies": {
     "@fontsource/fira-sans": "^5.0.20",
@@ -26,6 +30,7 @@
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.52.2",
     "react-intersection-observer": "^9.13.0",
+    "storyblok-generate-ts": "^2.1.0",
     "storyblok-rich-text-react-renderer": "^2.9.2"
   },
   "devDependencies": {

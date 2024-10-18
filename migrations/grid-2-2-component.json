@@ -1,0 +1,327 @@
+{
+  "name": "grid-2-2",
+  "display_name": "Raster-2-2",
+  "created_at": "2024-08-02T18:19:13.652Z",
+  "updated_at": "2024-09-25T21:30:59.713Z",
+  "id": 6123263,
+  "schema": {
+    "column_width": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "1f88af8e-52df-4995-8c75-e9b2860000ce",
+          "name": "100%",
+          "value": "w-full"
+        },
+        {
+          "_uid": "a00a3126-1b74-4863-b585-5db9aa5c5d30",
+          "value": "w-3/4",
+          "name": "75%"
+        },
+        {
+          "_uid": "b1fadb2c-ad65-4aea-bbeb-615c4022bf18",
+          "value": "w-2/4",
+          "name": "50%"
+        },
+        {
+          "_uid": "f7d86dfc-e0ba-4dbb-9294-53ff623906fc",
+          "value": "w-1/4",
+          "name": "25%"
+        }
+      ],
+      "key": "column_width",
+      "display_name": "Breite der Spalten"
+    },
+    "gap_x": {
+      "type": "option",
+      "pos": 1,
+      "use_uuid": true,
+      "key": "padding_x",
+      "options": [
+        {
+          "_uid": "3e2c8f8f-e75e-4ea8-b0dc-8e58c78443ef",
+          "name": "0",
+          "value": "gap-x-0"
+        },
+        {
+          "_uid": "9397a0b8-5ee2-4ad3-a398-dc6ea66dab96",
+          "value": "gap-x-1",
+          "name": "1"
+        },
+        {
+          "_uid": "dd7b9bc4-a909-486e-87a4-88ddfad5b69a",
+          "value": "gap-x-2",
+          "name": "2"
+        },
+        {
+          "_uid": "bdcff7f0-531a-4713-b597-e65242573c3d",
+          "value": "gap-x-3",
+          "name": "3"
+        },
+        {
+          "_uid": "03d69e47-9bf4-49e4-a1d2-44ef02c299be",
+          "value": "gap-x-4",
+          "name": "4"
+        },
+        {
+          "_uid": "729c905a-9e08-42f0-828c-70b21ae06d97",
+          "value": "gap-x-5",
+          "name": "5"
+        },
+        {
+          "_uid": "01a5af69-9b77-4ce6-8dfd-eb75216f3ec2",
+          "value": "gap-x-6",
+          "name": "6"
+        },
+        {
+          "_uid": "5bb54b4b-fa30-4766-8b0d-bd38c5504dad",
+          "value": "gap-x-7",
+          "name": "7"
+        },
+        {
+          "_uid": "bbc578b4-678e-46a5-abea-752e99ab487b",
+          "value": "gap-x-8",
+          "name": "8"
+        },
+        {
+          "_uid": "276f328c-3070-4212-a5af-bb4f1bffb49e",
+          "value": "gap-x-9",
+          "name": "9"
+        },
+        {
+          "_uid": "633059e2-fae7-4753-96f8-ea14cbe0305c",
+          "value": "gap-x-10",
+          "name": "10"
+        },
+        {
+          "_uid": "b2dd514c-1e92-4679-8d9a-cab6a53b92f5",
+          "value": "gap-x-16",
+          "name": "16"
+        },
+        {
+          "_uid": "0640f1e8-cee2-493d-9df4-a7459a9be3dd",
+          "value": "gap-x-20",
+          "name": "20"
+        },
+        {
+          "_uid": "b1d7d19b-2dcb-425a-84f7-f42acc053a95",
+          "value": "gap-x-24",
+          "name": "24"
+        },
+        {
+          "_uid": "397ab9de-62cb-4f6c-843e-fa9ba0fb9537",
+          "value": "gap-x-28",
+          "name": "28"
+        },
+        {
+          "_uid": "83407d6c-e2e6-4a05-b42a-c6409c4af0f4",
+          "value": "gap-x-32",
+          "name": "32"
+        },
+        {
+          "_uid": "ef06c0e6-17e7-4477-96fc-e292fdcd38b4",
+          "value": "gap-x-40",
+          "name": "40"
+        },
+        {
+          "_uid": "a6c45b82-6be9-44c8-b1d8-9195584ac2ac",
+          "value": "gap-x-52",
+          "name": "52"
+        }
+      ],
+      "display_name": "Abstand der X-Achse"
+    },
+    "gap_y": {
+      "type": "option",
+      "pos": 2,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "ccadc5a3-750d-415a-aa5b-50db7c972cbc",
+          "name": "0",
+          "value": "gap-y-0"
+        },
+        {
+          "_uid": "105c45f4-af70-46e9-86d9-2706de1511d8",
+          "value": "gap-y-1",
+          "name": "1"
+        },
+        {
+          "_uid": "532087dc-7713-4eff-9a8f-38a4e96957c1",
+          "value": "gap-y-2",
+          "name": "2"
+        },
+        {
+          "_uid": "81f763cb-4db1-4fb6-8575-ed4014bff9f8",
+          "value": "gap-y-3",
+          "name": "3"
+        },
+        {
+          "_uid": "fe8f2edc-f1d4-4981-a78b-c9d4567c02e7",
+          "value": "gap-y-4",
+          "name": "4"
+        },
+        {
+          "_uid": "f0e5d067-c366-4607-af64-c662f8b8382d",
+          "value": "gap-y-5",
+          "name": "5"
+        },
+        {
+          "_uid": "8a27c568-490e-402f-8586-f2f01d80a360",
+          "value": "gap-y-6",
+          "name": "6"
+        },
+        {
+          "_uid": "82b38571-97fc-4587-8a77-f60985c54d1a",
+          "value": "gap-y-7",
+          "name": "7"
+        },
+        {
+          "_uid": "9f0d3d4a-8c52-4aae-9fbf-86736cdb6a34",
+          "value": "gap-y-8",
+          "name": "8"
+        },
+        {
+          "_uid": "851d3825-f64c-405e-9437-7c08354d7b3a",
+          "value": "gap-y-9",
+          "name": "9"
+        },
+        {
+          "_uid": "2759b84e-8aac-4993-9f30-fadf0570d3d3",
+          "value": "gap-y-10",
+          "name": "10"
+        },
+        {
+          "_uid": "6ca387e4-d367-4714-bd02-13db62077b9b",
+          "value": "gap-y-16",
+          "name": "16"
+        },
+        {
+          "_uid": "1365d421-4c52-4281-ad04-61e715630f99",
+          "value": "gap-y-20",
+          "name": "20"
+        },
+        {
+          "_uid": "c54f5a43-b82e-4ee5-97c5-37b4a186212d",
+          "value": "gap-y-24",
+          "name": "24"
+        },
+        {
+          "_uid": "1071f80b-a4b1-4684-bcaf-68be5aaa9c5c",
+          "value": "gap-y-28",
+          "name": "28"
+        },
+        {
+          "_uid": "62e9cb94-5166-4284-bc99-dae6a1acbc38",
+          "value": "gap-y-32",
+          "name": "32"
+        },
+        {
+          "_uid": "2e6a3cdf-1f41-4194-95f0-c3b591aec27c",
+          "value": "gap-y-40",
+          "name": "40"
+        },
+        {
+          "_uid": "63487c30-409e-4871-8112-941711eecfec",
+          "value": "gap-y-52",
+          "name": "52"
+        }
+      ],
+      "default_value": "gap-0",
+      "required": false,
+      "display_name": "Abstand der Y-Achse",
+      "key": "gap_y"
+    },
+    "border_width": {
+      "type": "number",
+      "pos": 3,
+      "min_value": 0,
+      "max_value": 10,
+      "default_value": "",
+      "display_name": "Größe der Grenze"
+    },
+    "show_x_border": {
+      "type": "boolean",
+      "pos": 4,
+      "display_name": "Grenze an der X-Achse"
+    },
+    "show_y_border": {
+      "type": "boolean",
+      "pos": 5,
+      "display_name": "Grenze an der Y-Achse"
+    },
+    "swap_first_row": {
+      "type": "boolean",
+      "pos": 6,
+      "display_name": "1. Reihe versetzen",
+      "description": "Tauscht die Elemente der ersten Reihe in der Mobilen Ansicht.",
+      "key": "swap_first_row"
+    },
+    "swap_last_row": {
+      "type": "boolean",
+      "pos": 7,
+      "description": "Tauscht die Elemente der letzten Reihe in der mobilen Ansicht.",
+      "display_name": "2. Reihe versetzen",
+      "key": "swap_last_row"
+    },
+    "content": {
+      "type": "bloks",
+      "pos": 8,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "media",
+        "richtext",
+        "donation_graph",
+        "anker",
+        "map"
+      ],
+      "minimum": 2,
+      "maximum": 4,
+      "required": true,
+      "key": "content"
+    },
+    "tab-6481f911-c7ef-4af0-867d-d1046c12d7e3": {
+      "display_name": "Einstellungen",
+      "keys": [
+        "show_x_border",
+        "show_y_border",
+        "padding_x",
+        "padding_y",
+        "column_width",
+        "swap_first_row",
+        "swap_last_row",
+        "gap_x",
+        "gap_y",
+        "border_width"
+      ],
+      "pos": 9,
+      "type": "tab"
+    },
+    "tab-be0e92f0-d22a-479e-95a8-1ae01dd179c9": {
+      "display_name": "Content",
+      "keys": [
+        "content"
+      ],
+      "pos": 10,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Raster-2-2",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#ffac00",
+  "icon": "block-1-2block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}

@@ -1,0 +1,116 @@
+{
+  "name": "media",
+  "display_name": "Bild",
+  "created_at": "2024-07-14T22:41:49.937Z",
+  "updated_at": "2024-09-21T07:58:50.706Z",
+  "id": 6047037,
+  "schema": {
+    "Bildeinstellungen": {
+      "type": "section",
+      "pos": 0,
+      "keys": [
+        "image",
+        "width",
+        "image_signature",
+        "signature_position",
+        "type"
+      ]
+    },
+    "image": {
+      "type": "asset",
+      "pos": 1,
+      "filetypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "option",
+      "pos": 2,
+      "use_uuid": true,
+      "display_name": "Rundungen",
+      "required": true,
+      "default_value": "none",
+      "options": [
+        {
+          "_uid": "197d0675-9a80-460a-8b7a-69b092848a86",
+          "name": "Keine",
+          "value": "none"
+        },
+        {
+          "_uid": "28d9af26-ba39-4f16-9f59-85107b95948e",
+          "value": "small",
+          "name": "Leichte"
+        },
+        {
+          "_uid": "d254c588-bfc0-452d-9eb6-c8209df875b7",
+          "value": "round",
+          "name": "Rund"
+        }
+      ]
+    },
+    "width": {
+      "type": "number",
+      "pos": 3,
+      "display_name": "Breite",
+      "description": "Bestimmt die Breite des Bildes in px. Die Höhe wird hierbei automatisch anhand des Seitenverhältnisses des Bildes bestimmt.",
+      "required": true,
+      "default_value": "0"
+    },
+    "image_signature": {
+      "type": "boolean",
+      "pos": 4,
+      "display_name": "Bildunterschrift aktivieren"
+    },
+    "signature_position": {
+      "type": "option",
+      "pos": 5,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "b0d6ec63-eeaf-4d1e-a83d-dae3a8dc742f",
+          "name": "Links",
+          "value": "text-left"
+        },
+        {
+          "_uid": "2abc2a72-82e6-477d-b324-179fbb236061",
+          "value": "text-center",
+          "name": "Mittig"
+        },
+        {
+          "_uid": "fa24d148-4a4e-4862-a1e2-7cf4ddb06663",
+          "value": "text-right",
+          "name": "Rechts"
+        }
+      ],
+      "required": true,
+      "display_name": "Bildunterschrift Position"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Bild",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#ffac00",
+  "icon": "block-image",
+  "internal_tags_list": [
+    {
+      "id": 47113,
+      "name": "Media"
+    },
+    {
+      "id": 47114,
+      "name": "Image"
+    }
+  ],
+  "internal_tag_ids": [
+    "47113",
+    "47114"
+  ],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}

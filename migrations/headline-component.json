@@ -1,0 +1,99 @@
+{
+  "name": "headline",
+  "display_name": "Überschrift",
+  "created_at": "2024-07-29T13:21:12.180Z",
+  "updated_at": "2024-09-22T20:35:30.860Z",
+  "id": 6104777,
+  "schema": {
+    "Headline": {
+      "type": "text",
+      "pos": 0,
+      "display_name": "Text"
+    },
+    "scroll_id": {
+      "type": "text",
+      "pos": 1,
+      "description": "Über die Scroll-Id kann direkt zu diesem Element gescrollt werden. Beispiel: Wenn ein Link button zu folgendem Link führt: https://x.com/orchester#stamm sorgt das #stamm dafür, dass direkt zu dem Element mit der Scroll id \"stamm\" gescrolled wird."
+    },
+    "Size": {
+      "type": "option",
+      "pos": 2,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "7bb3712d-d348-4c33-b00f-26e86e8c0061",
+          "name": "H1",
+          "value": "32px"
+        },
+        {
+          "_uid": "1bdc9a87-f3c7-412b-8a28-dd0d41c9f22a",
+          "value": "28px",
+          "name": "H2"
+        },
+        {
+          "_uid": "8cd346c7-c9ef-42ee-a55b-b0fb5cc1021d",
+          "value": "24px",
+          "name": "H3"
+        },
+        {
+          "_uid": "84c96ab7-8e60-4a7a-ab49-53e22fc41592",
+          "value": "20px",
+          "name": "H4"
+        },
+        {
+          "_uid": "5559053b-7dac-4d14-894a-1150158ede99",
+          "value": "16px",
+          "name": "H5"
+        },
+        {
+          "_uid": "80257a95-94e3-4a72-b5f7-761d0177185a",
+          "value": "12px",
+          "name": "H6"
+        }
+      ],
+      "required": true,
+      "display_name": "Größe",
+      "default_value": "32px"
+    },
+    "Alignment": {
+      "type": "option",
+      "pos": 3,
+      "use_uuid": true,
+      "required": true,
+      "options": [
+        {
+          "_uid": "a71f1373-fffd-4d91-815d-2bc269229199",
+          "name": "Links",
+          "value": "left"
+        },
+        {
+          "_uid": "6b04a74c-4e3e-41a0-87e5-6e0771142e08",
+          "value": "center",
+          "name": "Mittig"
+        },
+        {
+          "_uid": "8bef7333-cf53-464a-b422-559ff34ca3ad",
+          "value": "right",
+          "name": "Rechts"
+        }
+      ],
+      "default_value": "left",
+      "display_name": "Horizontale Position"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": "<div class=\"font-24\">{{it.Headline}}</div>",
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Überschrift",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#ffac00",
+  "icon": "block-text-c",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}
