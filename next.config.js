@@ -7,6 +7,7 @@ module.exports = {
     mailHostname: process.env.MAIL_HOSTNAME,
   },
   publicRuntimeConfig: {
+    storyblokAccessToken: process.env.STORYBLOK_ACCESS_TOKEN,
     mapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
     recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,

@@ -17,6 +17,14 @@ import Youtube from "../components/dynamic/Youtube";
 import Form from "../components/dynamic/Form";
 import FormRow from "../components/dynamic/FormRow";
 import FormInput from "../components/dynamic/FormInput";
+import getConfig from "next/config";
+import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
+
+const {
+  publicRuntimeConfig,
+}: {
+  publicRuntimeConfig: PublicRuntimeConfig;
+} = getConfig();
 
 const layouts = {
   page: Page,
@@ -51,7 +59,7 @@ export const components = {
 };
 
 storyblokInit({
-  accessToken: "mJprh4YAOF6vACNQGQYBhgtt",
+  accessToken: publicRuntimeConfig.storyblokAccessToken,
   use: [apiPlugin],
   components,
   apiOptions: {

@@ -1,6 +1,6 @@
+import getConfig from "next/config";
 import nodemailer, { SentMessageInfo } from "nodemailer";
 import type { NextApiRequest, NextApiResponse } from "next";
-import getConfig from "next/config";
 import { ServerRuntimeConfig } from "../../types/ServerRuntimeConfigType";
 
 const applyXSSprotection: (text: string) => string = (text: string) => {
