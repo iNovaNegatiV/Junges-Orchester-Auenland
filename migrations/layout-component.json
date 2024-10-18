@@ -1,0 +1,70 @@
+{
+  "name": "layout",
+  "display_name": "Layout",
+  "created_at": "2024-08-01T21:37:36.990Z",
+  "updated_at": "2024-09-25T13:01:24.373Z",
+  "id": 6119970,
+  "schema": {
+    "Horizontal_Space": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "589f0550-d909-42b4-b979-07f24321c590",
+          "name": "Volle Breite",
+          "value": "100%"
+        },
+        {
+          "_uid": "9e952d59-fcc7-43f8-96bc-45ee50a371a9",
+          "value": "90%",
+          "name": "Kleiner Abstand"
+        },
+        {
+          "_uid": "61732871-6b3f-4c48-aee4-468701ec4190",
+          "value": "80%",
+          "name": "Normaler Abstand"
+        },
+        {
+          "_uid": "bd4160c9-7126-4125-9916-4a8348027ee2",
+          "value": "65%",
+          "name": "Großer Abstand"
+        },
+        {
+          "_uid": "3a110d42-d3a9-44ae-a652-280430515adf",
+          "value": "40%",
+          "name": "Riesiger Abstand"
+        },
+        {
+          "_uid": "6ec12b99-a301-4b04-a891-b5e244af0f11",
+          "value": "50%",
+          "name": "Halbiert"
+        },
+        {
+          "_uid": "7766e0c2-e545-4e18-85a7-9c558d9156be",
+          "value": "25%",
+          "name": "Geviertelt"
+        }
+      ]
+    },
+    "Content": {
+      "type": "bloks",
+      "pos": 1
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": "",
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Layout",
+  "component_group_uuid": "e044cbca-6c1a-49e6-965a-986fb7ed524c",
+  "color": "#395ece",
+  "icon": "block-table-2",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Layouts"
+}

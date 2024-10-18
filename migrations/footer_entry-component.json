@@ -1,0 +1,44 @@
+{
+  "name": "footer_entry",
+  "display_name": null,
+  "created_at": "2024-09-20T22:44:20.911Z",
+  "updated_at": "2024-09-21T08:05:15.315Z",
+  "id": 6318789,
+  "schema": {
+    "headline": {
+      "type": "text",
+      "pos": 0,
+      "display_name": "Überschrift",
+      "required": true,
+      "max_length": 50
+    },
+    "links": {
+      "type": "bloks",
+      "pos": 1,
+      "minimum": 1,
+      "maximum": 10,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "footer_link"
+      ],
+      "required": true,
+      "display_name": "Links"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": "<div class=\"font-24\">{{it.headline}}</div>",
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "footer_entry",
+  "component_group_uuid": "58960e2d-cad4-49dc-85cf-48da321093b0",
+  "color": "#ff6159",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Footer"
+}

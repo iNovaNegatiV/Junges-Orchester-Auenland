@@ -3,6 +3,11 @@ module.exports = {
   // ... rest of the configuration.
   output: "standalone",
   images: {
-    domains: ["a.storyblok.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "a.storyblok.com",
+      },
+    ],
   },
 };

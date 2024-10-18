@@ -1,0 +1,67 @@
+{
+  "name": "vertical_spacer",
+  "display_name": "Vertikaler Abstand",
+  "created_at": "2024-08-04T14:13:18.280Z",
+  "updated_at": "2024-09-21T07:28:55.256Z",
+  "id": 6125764,
+  "schema": {
+    "height": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "display_name": "Höhe",
+      "options": [
+        {
+          "_uid": "e88d6712-0f61-412d-a601-9c65a13b6ace",
+          "value": "10px",
+          "name": "2S"
+        },
+        {
+          "_uid": "2ce44c33-7936-43a6-898d-2986e8bb0b9f",
+          "name": "S",
+          "value": "20px"
+        },
+        {
+          "_uid": "37906361-6fce-4a93-af6b-497562670377",
+          "value": "50px",
+          "name": "M"
+        },
+        {
+          "_uid": "7b18fe56-748d-45b0-b83a-474ff0cd9649",
+          "value": "75px",
+          "name": "L"
+        },
+        {
+          "_uid": "26ff666f-d883-4100-ae65-aaa226a92f7d",
+          "value": "100px",
+          "name": "XL"
+        },
+        {
+          "_uid": "83058e14-f9ff-41c8-8dba-d2c4074168c0",
+          "value": "150px",
+          "name": "2XL"
+        },
+        {
+          "_uid": "5b0f60f8-f6e5-4a12-936b-f3c8df38674f",
+          "value": "200px",
+          "name": "3XL"
+        }
+      ]
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Vertikaler Abstand",
+  "component_group_uuid": "e044cbca-6c1a-49e6-965a-986fb7ed524c",
+  "color": "#395ece",
+  "icon": "block-block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Layouts"
+}

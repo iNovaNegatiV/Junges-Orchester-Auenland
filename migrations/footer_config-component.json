@@ -1,0 +1,69 @@
+{
+  "name": "footer_config",
+  "display_name": "Footer Konfiguration",
+  "created_at": "2024-09-20T22:42:26.686Z",
+  "updated_at": "2024-09-20T23:20:12.652Z",
+  "id": 6318788,
+  "schema": {
+    "logo": {
+      "type": "bloks",
+      "pos": 0,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "footer_icon"
+      ],
+      "minimum": 1,
+      "maximum": 1,
+      "required": true
+    },
+    "entries": {
+      "type": "bloks",
+      "pos": 1,
+      "minimum": 1,
+      "maximum": 5,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "footer_entry"
+      ],
+      "required": true,
+      "display_name": "Spalten"
+    },
+    "tab-6c3ff1ac-fa94-4e2b-aa5e-a59326296e72": {
+      "display_name": "Social Media Icons",
+      "keys": [
+        "social_media_icons"
+      ],
+      "pos": 2,
+      "type": "tab"
+    },
+    "social_media_icons": {
+      "type": "bloks",
+      "pos": 3,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "footer_icon"
+      ],
+      "minimum": 1,
+      "maximum": 10,
+      "required": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Footer Konfiguration",
+  "component_group_uuid": "fe9096c5-5a6d-4bc1-b2af-2596c09c6d3c",
+  "color": "#1b243f",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Configs"
+}

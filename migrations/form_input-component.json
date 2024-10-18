@@ -1,0 +1,146 @@
+{
+  "name": "form_input",
+  "display_name": "Eingabefeld",
+  "created_at": "2024-08-07T13:24:14.863Z",
+  "updated_at": "2024-10-01T10:43:47.162Z",
+  "id": 6139829,
+  "schema": {
+    "label": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "display_name": "Label",
+      "options": [
+        {
+          "_uid": "d24856c2-d1f1-494c-8147-042370205663",
+          "value": "first_name",
+          "name": "Vorname"
+        },
+        {
+          "_uid": "f46380af-56f3-4e77-aff6-380d8bd13528",
+          "value": "last_name",
+          "name": "Nachname"
+        },
+        {
+          "_uid": "2c040dab-0e18-4136-86a8-f75dbc8e72d0",
+          "name": "Betreff",
+          "value": "subject"
+        },
+        {
+          "_uid": "c6b025b6-b575-47ee-9f2a-3114b15bed10",
+          "value": "email",
+          "name": "Email"
+        },
+        {
+          "_uid": "5f9cb4e5-16e6-489d-b589-c9fece512321",
+          "value": "text",
+          "name": "Text"
+        },
+        {
+          "_uid": "f32e24e1-7772-45de-8f40-3ebd5ef44ee5",
+          "value": "other",
+          "name": "Anderes"
+        }
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "option",
+      "pos": 1,
+      "use_uuid": true,
+      "display_name": "Datentyp",
+      "required": true,
+      "options": [
+        {
+          "_uid": "f0fd2bbc-0e4d-487d-8880-9913a9764f86",
+          "name": "Text",
+          "value": "text"
+        },
+        {
+          "_uid": "dbe7241b-c8e5-4f87-baaa-ab727e7eca44",
+          "value": "email",
+          "name": "Email"
+        },
+        {
+          "_uid": "6e6dda48-2f56-4664-aea9-9ce002e13a9b",
+          "value": "number",
+          "name": "Zahl"
+        },
+        {
+          "_uid": "a4a79142-0e8a-46de-8c13-08e727bba543",
+          "value": "textarea",
+          "name": "Großer Text"
+        },
+        {
+          "_uid": "32b900d2-f43c-473e-a46f-978b0dff1689",
+          "value": "checkbox",
+          "name": "Checkbox"
+        },
+        {
+          "_uid": "e628aae1-bc1d-4290-b97a-df226fc5dbc1",
+          "value": "date",
+          "name": "Datum"
+        },
+        {
+          "_uid": "17070ea5-2f8a-4d55-a20a-37aae9e3706d",
+          "value": "file",
+          "name": "Datei"
+        },
+        {
+          "_uid": "78654d09-4055-4e71-bebe-dc50be5419bc",
+          "value": "password",
+          "name": "Passwort"
+        },
+        {
+          "_uid": "de638a40-3690-4870-9c54-9e998f961580",
+          "value": "tel",
+          "name": "Telefonnummer"
+        },
+        {
+          "_uid": "b4b087ee-23da-44cc-9851-e0979cb3001a",
+          "value": "button",
+          "name": "Absenden"
+        }
+      ],
+      "default_value": "text"
+    },
+    "required": {
+      "type": "boolean",
+      "pos": 2,
+      "display_name": "Pflichtfeld",
+      "default_value": false
+    },
+    "max_length": {
+      "type": "number",
+      "pos": 3,
+      "required": true,
+      "min_value": 1,
+      "max_value": 500,
+      "display_name": "Maximale Zeichenanzahl"
+    },
+    "tab-9a817503-e983-4537-b78b-bbffee0972fc": {
+      "display_name": "Überprüfung",
+      "keys": [
+        "required",
+        "max_length"
+      ],
+      "pos": 4,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Eingabefeld",
+  "component_group_uuid": "178f8d28-aa30-45cb-a6b5-d4af96c76cba",
+  "color": "#2db47d",
+  "icon": "block-1-2block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Forms"
+}

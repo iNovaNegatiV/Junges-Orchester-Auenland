@@ -1,0 +1,50 @@
+{
+  "name": "donation_graph",
+  "display_name": "Spendengrafik",
+  "created_at": "2024-08-04T19:31:45.824Z",
+  "updated_at": "2024-09-21T07:52:03.970Z",
+  "id": 6126113,
+  "schema": {
+    "limit": {
+      "type": "number",
+      "pos": 0,
+      "min_value": 100,
+      "max_value": 100,
+      "required": true,
+      "display_name": "Limit (in %)",
+      "default_value": "100"
+    },
+    "current": {
+      "type": "number",
+      "pos": 1,
+      "required": true,
+      "min_value": 0,
+      "max_value": 100,
+      "display_name": "Aktuell (in %)"
+    },
+    "background_image": {
+      "type": "asset",
+      "pos": 2,
+      "required": true,
+      "filetypes": [
+        "images"
+      ],
+      "display_name": "Hintergrundbild"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Spendengrafik",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#2db47d",
+  "icon": "block-image",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}

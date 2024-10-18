@@ -8,11 +8,7 @@ export const CookieContext = createContext<{
   storeConsent: (consent: string) => {},
 });
 
-export const CookieProvider = ({
-  children,
-}: {
-  children: React.ReactElement;
-}) => {
+export const CookieProvider = ({ children }: { children: React.ReactNode }) => {
   const consentKey = "cookie_consent";
   const [consentGiven, setConsentGiven] = useState<string>("declined");
 

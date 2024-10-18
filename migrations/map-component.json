@@ -1,0 +1,112 @@
+{
+  "name": "map",
+  "display_name": "Karte",
+  "created_at": "2024-08-24T14:57:20.775Z",
+  "updated_at": "2024-09-25T12:54:43.117Z",
+  "id": 6206147,
+  "schema": {
+    "lat": {
+      "type": "number",
+      "pos": 0,
+      "display_name": "Breitengrad",
+      "required": true,
+      "min_value": -90,
+      "max_value": 90
+    },
+    "long": {
+      "type": "number",
+      "pos": 1,
+      "display_name": "Längengrad",
+      "required": true,
+      "min_value": -90,
+      "max_value": 90,
+      "default_value": ""
+    },
+    "map_type": {
+      "type": "option",
+      "pos": 2,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "f4e2c253-70c4-4681-945e-0bc62c1341f4",
+          "name": "Normal",
+          "value": "roadmap"
+        },
+        {
+          "_uid": "0854a09f-57c0-4022-b82d-f40359f444fa",
+          "value": "satellite",
+          "name": "Satellit"
+        },
+        {
+          "_uid": "17c4fdf0-26e0-4187-b773-71f4fe969261",
+          "value": "hybrid",
+          "name": "Hybrid"
+        },
+        {
+          "_uid": "495da863-0681-4898-90de-937bfd775566",
+          "value": "terrain",
+          "name": "Gelände"
+        }
+      ],
+      "default_value": "roadmap",
+      "required": true
+    },
+    "zoom": {
+      "type": "number",
+      "pos": 3,
+      "display_name": "Zoom",
+      "required": true,
+      "default_value": "16",
+      "min_value": 12,
+      "max_value": 18
+    },
+    "zoom_control": {
+      "type": "boolean",
+      "pos": 4
+    },
+    "tilt": {
+      "type": "number",
+      "pos": 5,
+      "required": true,
+      "default_value": "0",
+      "min_value": 0,
+      "max_value": 45,
+      "display_name": "Neigung"
+    },
+    "tab-5b52eeec-c3ad-4a83-9a7a-f700171867a6": {
+      "display_name": "Standard",
+      "keys": [
+        "lat",
+        "long",
+        "map_type",
+        "zoom",
+        "zoom_control"
+      ],
+      "pos": 6,
+      "type": "tab"
+    },
+    "tab-881fc147-c336-47d3-9d38-5c0fde59dbd9": {
+      "display_name": "Erweitert",
+      "keys": [
+        "tilt"
+      ],
+      "pos": 7,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Karte",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#ff6159",
+  "icon": "block-map-pin",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "navigation_config",
+  "display_name": "Navigations Konfiguration",
+  "created_at": "2024-09-20T20:48:11.056Z",
+  "updated_at": "2024-09-20T21:00:24.944Z",
+  "id": 6318670,
+  "schema": {
+    "logo": {
+      "type": "asset",
+      "pos": 0,
+      "display_name": "Logo",
+      "required": true,
+      "filetypes": [
+        "images"
+      ]
+    },
+    "navigation_links": {
+      "type": "bloks",
+      "pos": 1,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "navigation_main_link"
+      ],
+      "minimum": 1,
+      "maximum": 30,
+      "required": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Navigations Konfiguration",
+  "component_group_uuid": "fe9096c5-5a6d-4bc1-b2af-2596c09c6d3c",
+  "color": "#395ece",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Configs"
+}

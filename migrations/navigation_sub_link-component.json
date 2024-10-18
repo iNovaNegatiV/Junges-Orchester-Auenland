@@ -1,0 +1,37 @@
+{
+  "name": "navigation_sub_link",
+  "display_name": null,
+  "created_at": "2024-09-20T20:50:26.726Z",
+  "updated_at": "2024-09-20T23:27:35.821Z",
+  "id": 6318676,
+  "schema": {
+    "label": {
+      "type": "text",
+      "pos": 0,
+      "display_name": "Label",
+      "required": true,
+      "max_length": 50
+    },
+    "link": {
+      "type": "multilink",
+      "pos": 1,
+      "show_anchor": true,
+      "required": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": "<div class=\"font-20 font-medium sb-pr-3\">{{it.label}}</div>",
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "navigation_sub_link",
+  "component_group_uuid": "a80e08f6-34ee-41e5-8616-da2beef6dbbb",
+  "color": "#ff6159",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Navigation"
+}

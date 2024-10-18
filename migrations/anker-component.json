@@ -1,0 +1,123 @@
+{
+  "name": "anker",
+  "display_name": "Link-Button",
+  "created_at": "2024-08-04T20:23:56.237Z",
+  "updated_at": "2024-09-21T08:03:38.631Z",
+  "id": 6126119,
+  "schema": {
+    "text": {
+      "type": "text",
+      "pos": 0,
+      "required": true,
+      "display_name": "Text"
+    },
+    "type": {
+      "type": "option",
+      "pos": 4,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "1dbdc5d6-7269-45d8-9ae7-1aeea853ffc7",
+          "name": "Normal",
+          "value": "normal"
+        },
+        {
+          "_uid": "9a8e2d0d-9206-4413-ab6f-f9afa168c662",
+          "value": "round",
+          "name": "Rund"
+        },
+        {
+          "_uid": "208939c0-c79d-49a6-9020-95a5ffa8f83e",
+          "value": "pill",
+          "name": "Pille"
+        }
+      ],
+      "required": true
+    },
+    "foreground_color": {
+      "type": "custom",
+      "pos": 5,
+      "use_uuid": true,
+      "required": true,
+      "options": [
+        {
+          "name": "size",
+          "value": "",
+          "_uid": "32d35ac6-8b5e-4f00-9a61-37c43bb924e8"
+        },
+        {
+          "name": "defaultValue",
+          "value": "#273385",
+          "_uid": "73f194b3-2545-4f3f-a26f-2acf9b837ca9"
+        },
+        {
+          "name": "colors",
+          "value": "[\"#DFF0D8\", \"#397901\", \"#273385\"]",
+          "_uid": "06d45422-994e-42db-b972-a6c55a8f1324"
+        }
+      ],
+      "default_value": "#273385",
+      "field_type": "storyblok-palette",
+      "display_name": "Textfarbe"
+    },
+    "background_color": {
+      "type": "custom",
+      "pos": 6,
+      "use_uuid": true,
+      "required": true,
+      "options": [
+        {
+          "name": "size",
+          "value": "",
+          "_uid": "a52f62d2-f65b-4609-b431-02dfaa6adecc"
+        },
+        {
+          "name": "defaultValue",
+          "value": "#273385",
+          "_uid": "62a9f368-f570-432b-8376-3352714e0ba8"
+        },
+        {
+          "name": "colors",
+          "value": "[\"#DFF0D8\", \"#397901\", \"#273385\"]",
+          "_uid": "650f7b0a-dfed-472f-8585-2595190e1916"
+        }
+      ],
+      "default_value": "#273385",
+      "display_name": "Hintergrundfarbe",
+      "field_type": "storyblok-palette"
+    },
+    "tab-6db08a66-6260-41d7-b60f-aa4df70d7e62": {
+      "display_name": "Darstellung",
+      "keys": [
+        "type",
+        "background_color",
+        "foreground_color",
+        "text"
+      ],
+      "pos": 7,
+      "type": "tab"
+    },
+    "link": {
+      "type": "multilink",
+      "pos": 5,
+      "required": true,
+      "show_anchor": true,
+      "allow_target_blank": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Link-Button",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#ff6159",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}
