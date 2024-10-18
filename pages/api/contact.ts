@@ -1,14 +1,18 @@
 import nodemailer, { SentMessageInfo } from "nodemailer";
 import type { NextApiRequest, NextApiResponse } from "next";
+import getConfig from "next/config";
+import { ServerRuntimeConfig } from "../../types/ServerRuntimeConfigType";
 
 const applyXSSprotection: (text: string) => string = (text: string) => {
   return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
-const port: number = parseInt(process.env.MAIL_PORT) || 587;
-const hostname: string = process.env.MAIL_HOSTNAME;
-const mail: string = process.env.MAIL_USER_NAME;
-const pass: string = process.env.MAIL_PASS;
+const { serverRuntimeConfig }: { serverRuntimeConfig: ServerRuntimeConfig } =
+  getConfig();
+const port: number = serverRuntimeConfig.mailPort || 587;
+const hostname: string = serverRuntimeConfig.mailHostname;
+const mail: string = serverRuntimeConfig.mailUser;
+const pass: string = serverRuntimeConfig.mailPassword;
 
 const transporter = nodemailer.createTransport({
   host: hostname,
