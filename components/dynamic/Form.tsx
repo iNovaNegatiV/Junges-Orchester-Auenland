@@ -3,8 +3,12 @@ import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FormStoryblok } from "../../generated/form-component";
+import getConfig from "next/config";
+import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
 
 const Form = ({ blok }: { blok: FormStoryblok }) => {
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
   const formAction = blok.action;
   const router = useRouter();
   const captchaRef = useRef(null);
@@ -17,7 +21,7 @@ const Form = ({ blok }: { blok: FormStoryblok }) => {
     other: "",
   });
 
-  function setFormValue(key, value) {
+  function setFormValue(key: string, value: any) {
     const localTemp = formData;
     localTemp[key] = value;
     setFormData(localTemp);
@@ -78,7 +82,7 @@ const Form = ({ blok }: { blok: FormStoryblok }) => {
         <ReCAPTCHA
           ref={captchaRef}
           size="invisible"
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          sitekey={publicRuntimeConfig.recaptchaSiteKey}
         />
         {blok.fields.map((component) => {
           return (

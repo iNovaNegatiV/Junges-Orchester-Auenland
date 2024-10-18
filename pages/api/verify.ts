@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import getConfig from "next/config";
+import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
 
 const verifyEndpoint = "https://www.google.com/recaptcha/api/siteverify";
 
@@ -9,6 +11,8 @@ const HANDLER = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 const POST = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
   const captcha = req.body.captcha;
   const captchaResponse = await fetch(verifyEndpoint, {
     method: "POST",
@@ -16,7 +20,7 @@ const POST = async (req: NextApiRequest, res: NextApiResponse) => {
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: new URLSearchParams({
-      secret: process.env.RECAPTCHA_SECRET_KEY,
+      secret: publicRuntimeConfig.recaptchaSecretKey,
       response: captcha,
     }),
   }).then((res) => res.json());

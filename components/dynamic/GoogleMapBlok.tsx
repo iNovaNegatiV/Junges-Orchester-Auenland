@@ -5,11 +5,15 @@ import { GoogleMap } from "@react-google-maps/api";
 import { useContext } from "react";
 import { CookieContext } from "../../context/CookieContext";
 import { MapStoryblok } from "../../generated/map-component";
+import getConfig from "next/config";
+import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
 
 // For easier location setting https://www.birdtheme.org/useful/v3tool.html
 
 const GoogleMapBlok = ({ blok }: { blok: MapStoryblok }) => {
   const { consentGiven } = useContext(CookieContext);
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
 
   const defaultMapContainerStyle = {
     width: "100%",
@@ -31,7 +35,7 @@ const GoogleMapBlok = ({ blok }: { blok: MapStoryblok }) => {
   };
 
   const { isLoaded: scriptLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
+    googleMapsApiKey: publicRuntimeConfig.mapsApiKey,
   });
 
   if (loadError) {
