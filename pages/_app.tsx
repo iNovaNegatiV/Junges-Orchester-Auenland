@@ -2,23 +2,23 @@ import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Anker from "../components/dynamic/Anker";
 import Page from "./[...slug]";
-import PageLayout from "../components/dynamic/PageLayout";
-import VerticalSpace from "../components/dynamic/VerticalSpace";
+import PageLayout from "../components/layouts/PageLayout";
+import VerticalSpace from "../components/layouts/VerticalSpace";
 import Carousel from "../components/dynamic/Carousel";
 import CookieSelect from "../components/dynamic/CookieSelect";
 import DonationGraph from "../components/dynamic/DonationGraph";
-import Grid2x2 from "../components/dynamic/Grid";
 import Headline from "../components/dynamic/Headline";
 import GoogleMapBlok from "../components/dynamic/GoogleMapBlok";
 import Media from "../components/dynamic/Media";
-import RichText from "../components/dynamic/RichText";
+import RichTextBlok from "../components/dynamic/RichTextBlok";
 import Teaser from "../components/dynamic/Teaser";
 import Youtube from "../components/dynamic/Youtube";
-import Form from "../components/dynamic/Form";
-import FormRow from "../components/dynamic/FormRow";
-import FormInput from "../components/dynamic/FormInput";
+import Form from "../components/forms/Form";
+import FormRow from "../components/forms/FormRow";
+import FormInput from "../components/forms/FormInput";
 import getConfig from "next/config";
 import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
+import Grid2Columns from "../components/dynamic/grids/Grid-2-Columns";
 
 const {
   publicRuntimeConfig,
@@ -30,6 +30,7 @@ const layouts = {
   page: Page,
   layout: PageLayout,
   vertical_spacer: VerticalSpace,
+  grid: Grid2Columns,
 };
 
 const content = {
@@ -37,11 +38,10 @@ const content = {
   carousel: Carousel,
   cookie_select: CookieSelect,
   donation_graph: DonationGraph,
-  "grid-2-2": Grid2x2,
   headline: Headline,
   map: GoogleMapBlok,
   media: Media,
-  richtext: RichText,
+  richtext_blok: RichTextBlok,
   teaser: Teaser,
   youtube: Youtube,
 };
@@ -63,7 +63,7 @@ storyblokInit({
   use: [apiPlugin],
   components,
   apiOptions: {
-    region: "europe",
+    region: "eu",
   },
 });
 

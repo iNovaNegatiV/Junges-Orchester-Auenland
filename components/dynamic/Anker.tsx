@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRightAnkerIcon } from "../static/Icons";
 import { AnkerStoryblok } from "../../generated/anker-component";
+import { storyblokEditable } from "@storyblok/react";
 
 const Anker = ({ blok }: { blok: AnkerStoryblok }) => {
   const radiusType =
@@ -21,6 +22,7 @@ const Anker = ({ blok }: { blok: AnkerStoryblok }) => {
           : blok.link.cached_url || blok.link.url
       }
       target={blok.link.target || "_self"}
+      {...storyblokEditable(blok)}
     >
       <p style={{ color: blok.foreground_color.value }}>{blok.text}</p>
       <ArrowRightAnkerIcon size={18} />

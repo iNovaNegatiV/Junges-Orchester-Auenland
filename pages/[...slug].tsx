@@ -9,6 +9,8 @@ import Head from "next/head";
 import Layout from "../components/static/Layout";
 import CookieBanner from "../components/static/CookieBanner";
 import { LayoutStoryblok } from "../generated/layout-component";
+import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
+import getConfig from "next/config";
 
 export default function Page({ story }) {
   return (
@@ -35,8 +37,11 @@ export default function Page({ story }) {
 export async function getStaticProps({ params }) {
   let slug: string = params.slug ? params.slug.join("/") : "home";
 
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
+
   let sbParams: ISbStoriesParams = {
-    version: "draft",
+    version: publicRuntimeConfig.environment === "dev" ? "draft" : "published",
   };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();

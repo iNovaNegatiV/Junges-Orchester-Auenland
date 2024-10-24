@@ -2,11 +2,13 @@
 
 import { Marker, useJsApiLoader } from "@react-google-maps/api";
 import { GoogleMap } from "@react-google-maps/api";
-import { useContext } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { CookieContext } from "../../context/CookieContext";
 import { MapStoryblok } from "../../generated/map-component";
 import getConfig from "next/config";
 import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
+import { storyblokEditable } from "@storyblok/react";
+import { setDefaults, fromAddress, OutputFormat } from "react-geocode";
 
 // For easier location setting https://www.birdtheme.org/useful/v3tool.html
 
@@ -15,24 +17,51 @@ const GoogleMapBlok = ({ blok }: { blok: MapStoryblok }) => {
   const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
     getConfig();
 
-  const defaultMapContainerStyle = {
-    width: "100%",
-    height: "600px",
-  };
-
-  const mapCenter = {
-    lat: parseFloat(blok.lat),
-    lng: parseFloat(blok.long),
-  };
-
-  const mapZoom = parseInt(blok.zoom) || 16;
-
-  const mapOptions = {
-    zoomControl: blok.zoom_control,
-    tilt: parseInt(blok.tilt) || 0,
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
+  const [mapZoom, setMapZoom] = useState(16);
+  const [mapOptions, setMapOptions] = useState({
+    zoomControl: false,
+    tilt: 0,
     gestureHandling: "auto",
-    mapTypeId: blok.map_type,
-  };
+    mapTypeId: "roadmap",
+  });
+
+  // Set default values for GeoCoding
+  setDefaults({
+    key: publicRuntimeConfig.geocodingApiKey,
+    language: "de",
+    region: "de",
+    outputFormat: OutputFormat.JSON,
+  });
+
+  useEffect(() => {
+    // Set Map Zoom
+    setMapZoom(parseInt(blok.zoom));
+
+    // Set MapOptions
+    setMapOptions({
+      zoomControl: blok.zoom_control,
+      tilt: parseInt(blok.tilt) || 0,
+      gestureHandling: "auto",
+      mapTypeId: blok.map_type,
+    });
+
+    // Set Lat & Long
+    if (blok.lat && blok.long) {
+      setLongitude(parseFloat(blok.long));
+      setLatitude(parseFloat(blok.lat));
+    } else {
+      // Get Lat Long by Adress
+      fromAddress(`${blok.plz} ${blok.city}, ${blok.adress}`).then(
+        ({ results }: { results: any }) => {
+          const location = results[0].geometry.location;
+          setLongitude(parseFloat(location.lng));
+          setLatitude(parseFloat(location.lat));
+        }
+      );
+    }
+  }, []);
 
   const { isLoaded: scriptLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: publicRuntimeConfig.mapsApiKey,
@@ -57,14 +86,17 @@ const GoogleMapBlok = ({ blok }: { blok: MapStoryblok }) => {
   }
 
   return (
-    <div className={"google-map w-full"}>
+    <div className={"google-map w-full"} {...storyblokEditable(blok)}>
       <GoogleMap
-        mapContainerStyle={defaultMapContainerStyle}
-        center={mapCenter}
+        mapContainerStyle={{
+          width: "100%",
+          height: "600px",
+        }}
+        center={{ lat: latitude, lng: longitude }}
         zoom={mapZoom}
         options={mapOptions}
       >
-        <Marker position={mapCenter} />
+        <Marker position={{ lat: latitude, lng: longitude }} />
       </GoogleMap>
     </div>
   );

@@ -19,12 +19,11 @@ export interface AssetStoryblok {
 }
 
 export interface MediaStoryblok {
-  Bildeinstellungen?: any;
+  image_signature?: boolean;
+  signature_position: "" | "text-left" | "text-center" | "text-right";
   image?: AssetStoryblok;
   type: "" | "none" | "small" | "round";
   width: string;
-  image_signature?: boolean;
-  signature_position: "" | "text-left" | "text-center" | "text-right";
   _uid: string;
   component: "media";
   [k: string]: any;

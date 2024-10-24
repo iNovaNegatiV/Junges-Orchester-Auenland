@@ -1,8 +1,9 @@
+import { storyblokEditable } from "@storyblok/react";
 import { TeaserStoryblok } from "../../generated/teaser-component";
 
 const Teaser = ({ blok }: { blok: TeaserStoryblok }) => {
   return (
-    <div className={"teaser relative"}>
+    <div className={"teaser relative"} {...storyblokEditable(blok)}>
       <img
         className={`w-full backdrop-brightness-50 ${blok.blur} ${blok.brightness} object-cover phone:!object-top`}
         style={{

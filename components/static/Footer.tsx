@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { getStoryblokApi, ISbStoriesParams } from "@storyblok/react";
+import {
+  getStoryblokApi,
+  ISbStoriesParams,
+  storyblokEditable,
+} from "@storyblok/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +11,8 @@ import { FooterConfigStoryblok } from "../../generated/footer_config-component";
 import { FooterIconStoryblok } from "../../generated/footer_icon-component";
 import { FooterLinkStoryblok } from "../../generated/footer_link-component";
 import { FooterEntryStoryblok } from "../../generated/footer_entry-component";
+import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
+import getConfig from "next/config";
 
 const Footer = () => {
   const router = useRouter();
@@ -38,6 +44,7 @@ const Footer = () => {
       className={
         "w-full flex flex-wrap justify-between gap-24 bg-background text-foreground px-24 py-16 tablet:px-16 phone:px-10"
       }
+      {...storyblokEditable(footerConfig)}
     >
       {footerConfig.entries.map((entry: FooterEntryStoryblok) => (
         <div key={entry._uid} className={containerStyle}>
@@ -110,8 +117,11 @@ const Footer = () => {
 */
 
 const getFooterConfig = async () => {
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
+
   let sbParams: ISbStoriesParams = {
-    version: "draft", // or 'published'
+    version: publicRuntimeConfig.environment === "dev" ? "draft" : "published",
   };
 
   const storyblokApi = getStoryblokApi();

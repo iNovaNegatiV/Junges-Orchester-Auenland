@@ -28,13 +28,12 @@ export interface RichtextStoryblok {
 }
 
 export interface TextMediaStoryblok {
-  caption?: string;
-  show_caption?: boolean;
-  image_format?: any;
   image?: AssetStoryblok;
-  headline?: string;
+  show_caption?: boolean;
+  caption?: string;
+  headline: string;
   subheadline?: string;
-  text?: RichtextStoryblok;
+  text: RichtextStoryblok;
   dark_background?: boolean;
   text_first?: boolean;
   _uid: string;

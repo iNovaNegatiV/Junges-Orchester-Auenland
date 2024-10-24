@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "../static/Icons";
 import { CarouselStoryblok } from "../../generated/carousel-component";
+import { storyblokEditable } from "@storyblok/react";
 
 const Carousel = ({ blok }: { blok: CarouselStoryblok }) => {
   const imageData = blok.images.map((imageBlok) => imageBlok.image);
@@ -10,25 +11,22 @@ const Carousel = ({ blok }: { blok: CarouselStoryblok }) => {
 
   const previousIndex = useMemo(() => {
     let previousIndex = index - 1;
-    if (previousIndex < 0) {
-      return maxIndex;
-    }
+    if (previousIndex < 0) return maxIndex;
     return previousIndex;
-  }, []);
+  }, [index]);
 
   const nextIndex = useMemo(() => {
     let nextIndex = index + 1;
-    if (nextIndex > maxIndex) {
-      return 0;
-    }
+    if (nextIndex > maxIndex) return 0;
     return nextIndex;
-  }, []);
+  }, [index]);
 
   return (
     <div
       className={
         "carousel__wrapper flex flex-col gap-4 justify-center phone:p-5"
       }
+      {...storyblokEditable(blok)}
     >
       <div
         className={
@@ -64,7 +62,7 @@ const Carousel = ({ blok }: { blok: CarouselStoryblok }) => {
 
         <div
           className={
-            "carousel__controls__wrapper absolute aspect-video w-auto h-full m-auto left-0 right-0 z-20 bg-none shadow-2xl"
+            "carousel__controls__wrapper absolute aspect-video w-auto h-full m-auto left-0 right-0 z-20 bg-none shadow-2xl rounded-lg"
           }
         >
           <button

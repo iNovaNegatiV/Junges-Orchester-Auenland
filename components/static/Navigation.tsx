@@ -1,12 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRightIcon, CloseIcon, HamburgerIcon } from "./Icons";
-import { getStoryblokApi, ISbStoriesParams } from "@storyblok/react";
+import {
+  getStoryblokApi,
+  ISbStoriesParams,
+  storyblokEditable,
+} from "@storyblok/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { NavigationMainLinkStoryblok } from "../../generated/navigation_main_link-component";
 import { NavigationConfigStoryblok } from "../../generated/navigation_config-component";
 import { NavigationSubLinkStoryblok } from "../../generated/navigation_sub_link-component";
+import getConfig from "next/config";
+import { PublicRuntimeConfig } from "../../types/PublicRuntimeConfigType";
 
 const ListElements = ({
   navigationConfig,
@@ -167,6 +173,7 @@ const Navigation = () => {
             ? "phone:fixed phone:h-full phone:w-full phone:top-0 phone:left-0 phone:z-50 phone:flex-col phone:justify-start phone:gap-12 phone:!p-0 phone:!pt-16"
             : ""
         }`}
+      {...storyblokEditable(navigationConfig)}
     >
       <div className={`${expanded ? "phone:w-full phone:relative" : ""}`}>
         <Link className={"no-link-decoration flex justify-center"} href="/">
@@ -217,8 +224,11 @@ const Navigation = () => {
 };
 
 const getNavigationConfig = async () => {
+  const { publicRuntimeConfig }: { publicRuntimeConfig: PublicRuntimeConfig } =
+    getConfig();
+
   let sbParams: ISbStoriesParams = {
-    version: "draft", // or 'published'
+    version: publicRuntimeConfig.environment === "dev" ? "draft" : "published",
   };
 
   const storyblokApi = getStoryblokApi();

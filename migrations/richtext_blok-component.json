@@ -1,8 +1,8 @@
 {
-  "name": "richtext",
+  "name": "richtext_blok",
   "display_name": "Großer Text",
   "created_at": "2024-07-29T14:07:22.537Z",
-  "updated_at": "2024-10-18T20:45:00.774Z",
+  "updated_at": "2024-10-23T21:19:49.818Z",
   "id": 6104939,
   "schema": {
     "Text": {
