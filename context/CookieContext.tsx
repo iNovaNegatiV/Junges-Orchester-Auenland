@@ -10,7 +10,7 @@ export const CookieContext = createContext<{
 
 export const CookieProvider = ({ children }: { children: React.ReactNode }) => {
   const consentKey = "cookie_consent";
-  const [consentGiven, setConsentGiven] = useState<string>("declined");
+  const [consentGiven, setConsentGiven] = useState<string>("undecided");
 
   const storeConsent = (consent: string) => {
     localStorage.setItem(
@@ -30,10 +30,6 @@ export const CookieProvider = ({ children }: { children: React.ReactNode }) => {
     const dataStored: { accepted: string; timestamp: Date } = rawDataStored
       ? JSON.parse(rawDataStored)
       : { accepted: "undecided", timestamp: null };
-
-    if (rawDataStored === null) {
-      storeConsent(dataStored.accepted);
-    }
     setConsentGiven(dataStored.accepted);
   }, []);
 

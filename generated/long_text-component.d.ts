@@ -9,9 +9,9 @@ export interface RichtextStoryblok {
   [k: string]: any;
 }
 
-export interface RichtextStoryblok {
-  Text: RichtextStoryblok;
+export interface LongTextStoryblok {
+  text: RichtextStoryblok;
   _uid: string;
-  component: "richtext";
+  component: "long_text";
   [k: string]: any;
 }

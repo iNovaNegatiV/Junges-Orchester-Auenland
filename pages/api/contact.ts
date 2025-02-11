@@ -1,6 +1,6 @@
+import getConfig from "next/config";
 import nodemailer, { SentMessageInfo } from "nodemailer";
 import type { NextApiRequest, NextApiResponse } from "next";
-import getConfig from "next/config";
 import { ServerRuntimeConfig } from "../../types/ServerRuntimeConfigType";
 
 const applyXSSprotection: (text: string) => string = (text: string) => {
@@ -13,6 +13,8 @@ const port: number = serverRuntimeConfig.mailPort || 587;
 const hostname: string = serverRuntimeConfig.mailHostname;
 const mail: string = serverRuntimeConfig.mailUser;
 const pass: string = serverRuntimeConfig.mailPassword;
+
+console.log(serverRuntimeConfig);
 
 const transporter = nodemailer.createTransport({
   host: hostname,
@@ -34,6 +36,7 @@ const SEND = async (
   surname: string,
   customInformation: string
 ): Promise<SentMessageInfo> => {
+  console.log("SENDING EMAIL");
   return await transporter.sendMail({
     from: mail,
     to: mail,

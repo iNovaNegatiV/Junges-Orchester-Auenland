@@ -1,0 +1,115 @@
+{
+  "name": "grid",
+  "display_name": "Raster mit 2 Spalten",
+  "description": null,
+  "created_at": "2024-10-21T21:43:40.409Z",
+  "updated_at": "2025-02-05T20:55:13.508Z",
+  "id": 6453296,
+  "schema": {
+    "type": {
+      "type": "option",
+      "pos": 0,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "c4b5424b-3128-4c42-a7ad-d7be366fc2c7",
+          "name": "25 / 75",
+          "value": "basis-1/4"
+        },
+        {
+          "_uid": "962ae8b6-f4cd-4ce1-9643-c593d4391fe5",
+          "value": "basis-2/5",
+          "name": "40 / 60"
+        },
+        {
+          "_uid": "94a760db-30b6-4c0d-8f80-a3bf978aa57d",
+          "value": "basis-1/2",
+          "name": "50 / 50"
+        },
+        {
+          "_uid": "d7c21200-61aa-42e4-931d-639c828ee50b",
+          "value": "basis-3/5",
+          "name": "60 / 40"
+        },
+        {
+          "_uid": "29ece2f7-2c2a-425b-a3e1-877da9a8a7c3",
+          "value": "basis-3/4",
+          "name": "75 / 25"
+        },
+        {
+          "_uid": "c288aee1-dd37-4ae0-b480-a1a9002cc6a8",
+          "value": "basis-4/5",
+          "name": "80 / 20"
+        }
+      ],
+      "default_value": "basis-1/2",
+      "required": true,
+      "display_name": "Verhältnis",
+      "id": "BlapGYiwSnG0SQf0ONpOuA"
+    },
+    "vary_sizing": {
+      "type": "boolean",
+      "pos": 1,
+      "display_name": "Verhältnis abwechseln",
+      "description": "Diese Einstellung sorgt dafür, dass sich das Größenverhältnis mit jeder neuen Reihe abwechselt.",
+      "default_value": true,
+      "id": "g9o--LlgSDithS6r7bjbyA"
+    },
+    "tab-a920f6b7-4649-44e7-980e-bc0b93fbdd0d": {
+      "display_name": "Allgemein",
+      "keys": [
+        "type",
+        "vary_sizing"
+      ],
+      "pos": 2,
+      "type": "tab",
+      "name": "tab-a920f6b7-4649-44e7-980e-bc0b93fbdd0d",
+      "id": "qSD2t0ZJROeYDrwLk_vdDQ"
+    },
+    "content": {
+      "type": "bloks",
+      "pos": 3,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "carousel",
+        "donation_graph",
+        "form",
+        "map",
+        "media",
+        "youtube",
+        "richtext_blok",
+        "long_text"
+      ],
+      "minimum": 1,
+      "required": true,
+      "display_name": "Content",
+      "id": "WKM8xJ08RuWCJCqE6XnD-A"
+    },
+    "tab-9d248c53-191d-48ad-96fc-b6172a8d4379": {
+      "display_name": "Inhaltselemente",
+      "keys": [
+        "content"
+      ],
+      "pos": 4,
+      "type": "tab",
+      "name": "tab-9d248c53-191d-48ad-96fc-b6172a8d4379",
+      "id": "nSSMUxkdSK2W_LYXKo1DeQ"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Raster mit 2 Spalten",
+  "component_group_uuid": "e044cbca-6c1a-49e6-965a-986fb7ed524c",
+  "color": "#395ece",
+  "icon": "block-table",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Layouts"
+}

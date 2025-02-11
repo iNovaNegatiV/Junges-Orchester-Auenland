@@ -1,30 +1,78 @@
 {
   "name": "map",
   "display_name": "Karte",
+  "description": null,
   "created_at": "2024-08-24T14:57:20.775Z",
-  "updated_at": "2024-09-25T12:54:43.117Z",
+  "updated_at": "2024-10-23T21:26:37.601Z",
   "id": 6206147,
   "schema": {
+    "plz": {
+      "type": "text",
+      "pos": 0,
+      "required": false,
+      "display_name": "Postleitzahl"
+    },
+    "city": {
+      "type": "text",
+      "pos": 1,
+      "display_name": "Stadt",
+      "required": false
+    },
+    "adress": {
+      "type": "text",
+      "pos": 2,
+      "display_name": "Straße & Hausnummer",
+      "required": false
+    },
     "lat": {
       "type": "number",
-      "pos": 0,
+      "pos": 3,
       "display_name": "Breitengrad",
-      "required": true,
+      "required": false,
       "min_value": -90,
       "max_value": 90
     },
     "long": {
       "type": "number",
-      "pos": 1,
+      "pos": 4,
       "display_name": "Längengrad",
-      "required": true,
+      "required": false,
       "min_value": -90,
       "max_value": 90,
       "default_value": ""
     },
+    "tab-5b52eeec-c3ad-4a83-9a7a-f700171867a6": {
+      "display_name": "Adresse",
+      "keys": [
+        "city",
+        "adress",
+        "plz"
+      ],
+      "pos": 5,
+      "type": "tab",
+      "name": "tab-5b52eeec-c3ad-4a83-9a7a-f700171867a6"
+    },
+    "tilt": {
+      "type": "number",
+      "pos": 6,
+      "required": true,
+      "default_value": "0",
+      "min_value": 0,
+      "max_value": 45,
+      "display_name": "Neigung"
+    },
+    "tab-f4eacb7d-ec0f-4bed-a8d0-2b1aac448b52": {
+      "display_name": "Lat-Long",
+      "keys": [
+        "lat",
+        "long"
+      ],
+      "pos": 7,
+      "type": "tab"
+    },
     "map_type": {
       "type": "option",
-      "pos": 2,
+      "pos": 8,
       "use_uuid": true,
       "options": [
         {
@@ -51,47 +99,30 @@
       "default_value": "roadmap",
       "required": true
     },
+    "tab-881fc147-c336-47d3-9d38-5c0fde59dbd9": {
+      "display_name": "Erweitert",
+      "keys": [
+        "tilt",
+        "map_type",
+        "zoom",
+        "zoom_control"
+      ],
+      "pos": 9,
+      "type": "tab",
+      "name": "tab-881fc147-c336-47d3-9d38-5c0fde59dbd9"
+    },
+    "zoom_control": {
+      "type": "boolean",
+      "pos": 10
+    },
     "zoom": {
       "type": "number",
-      "pos": 3,
+      "pos": 11,
       "display_name": "Zoom",
       "required": true,
       "default_value": "16",
       "min_value": 12,
       "max_value": 18
-    },
-    "zoom_control": {
-      "type": "boolean",
-      "pos": 4
-    },
-    "tilt": {
-      "type": "number",
-      "pos": 5,
-      "required": true,
-      "default_value": "0",
-      "min_value": 0,
-      "max_value": 45,
-      "display_name": "Neigung"
-    },
-    "tab-5b52eeec-c3ad-4a83-9a7a-f700171867a6": {
-      "display_name": "Standard",
-      "keys": [
-        "lat",
-        "long",
-        "map_type",
-        "zoom",
-        "zoom_control"
-      ],
-      "pos": 6,
-      "type": "tab"
-    },
-    "tab-881fc147-c336-47d3-9d38-5c0fde59dbd9": {
-      "display_name": "Erweitert",
-      "keys": [
-        "tilt"
-      ],
-      "pos": 7,
-      "type": "tab"
     }
   },
   "image": null,

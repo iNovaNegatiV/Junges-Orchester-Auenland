@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { YoutubeStoryblok } from "../../generated/youtube-component";
+import { storyblokEditable } from "@storyblok/react";
 
 const Youtube = ({ blok }: { blok: YoutubeStoryblok }) => {
   const [accepted, setAccepted] = useState(false);
@@ -14,7 +15,10 @@ const Youtube = ({ blok }: { blok: YoutubeStoryblok }) => {
     if (match[1]) videoId = match[1];
 
   return (
-    <div className={"w-full h-auto border-2 border-lightBlue relative"}>
+    <div
+      className={"w-full h-auto border-2 border-lightBlue relative"}
+      {...storyblokEditable(blok)}
+    >
       {accepted && (
         <iframe
           className={`w-full aspect-[${aspectRatio}] h-auto`}

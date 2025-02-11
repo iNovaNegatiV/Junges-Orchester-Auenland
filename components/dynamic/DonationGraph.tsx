@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { DonationGraphStoryblok } from "../../generated/donation_graph-component";
+import { storyblokEditable } from "@storyblok/react";
 
 const DonationGraph = ({ blok }: DonationGraphStoryblok) => {
   const { ref, inView } = useInView({
@@ -8,7 +9,11 @@ const DonationGraph = ({ blok }: DonationGraphStoryblok) => {
   });
 
   return (
-    <div ref={ref} className={`donation-graph w-full relative`}>
+    <div
+      ref={ref}
+      className={`relative w-[450px]`}
+      {...storyblokEditable(blok)}
+    >
       <Image
         src={blok.background_image.filename}
         alt={blok.background_image.alt}

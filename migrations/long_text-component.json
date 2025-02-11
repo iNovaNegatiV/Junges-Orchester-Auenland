@@ -1,0 +1,41 @@
+{
+  "name": "long_text",
+  "display_name": "Langer Text",
+  "description": "Langer Text",
+  "created_at": "2025-02-05T20:50:25.973Z",
+  "updated_at": "2025-02-06T08:27:58.698Z",
+  "id": 6916824,
+  "schema": {
+    "text": {
+      "type": "richtext",
+      "pos": 0,
+      "required": true,
+      "display_name": "Text",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "anker",
+        "headline",
+        "media",
+        "youtube"
+      ],
+      "allow_target_blank": true,
+      "id": "A_XKnkoDRMmDnFUd_A8wjQ"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Langer Text",
+  "component_group_uuid": "2efd21c3-fa5c-47ee-b349-d88606a4c4cc",
+  "color": "#f4cc48",
+  "icon": "block-text-l",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "component_group_name": "Components"
+}

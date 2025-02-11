@@ -11,7 +11,7 @@ const Media = ({ blok }: { blok: MediaStoryblok }) => {
       ? "rounded-full"
       : "rounded-none";
   return blok.image_signature ? (
-    <div className={`h-full flex flex-col gap-2 !phone:w-full`}>
+    <div className={`h-full flex flex-col gap-2 !phone:w-full justify-center`}>
       <Image
         className={`h-auto phone:w-full ${borderRadius}`}
         src={blok.image.filename}

@@ -1,6 +1,7 @@
 {
   "name": "youtube",
   "display_name": "Youtube Video",
+  "description": null,
   "created_at": "2024-10-09T17:03:39.318Z",
   "updated_at": "2024-10-09T17:20:33.809Z",
   "id": 6398996,

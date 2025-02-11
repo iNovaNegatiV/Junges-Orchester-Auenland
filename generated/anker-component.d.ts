@@ -27,6 +27,8 @@ export type MultilinkStoryblok =
 export interface AnkerStoryblok {
   text: string;
   type: "" | "normal" | "round" | "pill";
+  alignment: "" | "self-start" | "self-center" | "self-end";
+  phone_alignment: "" | "self-start" | "self-center" | "self-right";
   link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
   component: "anker";

@@ -1,8 +1,9 @@
 {
   "name": "layout",
   "display_name": "Layout",
+  "description": null,
   "created_at": "2024-08-01T21:37:36.990Z",
-  "updated_at": "2024-09-25T13:01:24.373Z",
+  "updated_at": "2025-02-06T12:36:50.250Z",
   "id": 6119970,
   "schema": {
     "Horizontal_Space": {
@@ -45,11 +46,48 @@
           "value": "25%",
           "name": "Geviertelt"
         }
-      ]
+      ],
+      "id": "FMdUPzDfQwONQ_KBPc8dPA"
+    },
+    "is_transparent": {
+      "type": "boolean",
+      "pos": 1,
+      "display_name": "Transparenter Hintergrund",
+      "default_value": true,
+      "id": "9opCXttgR_CZS0KJ9m2N_g"
+    },
+    "background_color": {
+      "type": "custom",
+      "pos": 2,
+      "id": "mLfJ84JwQE6NvIH-wuu7-g",
+      "field_type": "native-color-picker",
+      "options": [],
+      "display_name": "Hintergrundfarbe"
     },
     "Content": {
       "type": "bloks",
-      "pos": 1
+      "pos": 3,
+      "id": "7TR2H6MYSayvWh9yC-D8wQ"
+    },
+    "tab-6247616e-5da1-4eb6-b8f5-8de6907801eb": {
+      "display_name": "Content",
+      "keys": [
+        "Content"
+      ],
+      "pos": 4,
+      "type": "tab",
+      "id": "Ykdhbl2hTra49Y3mkHgB6w"
+    },
+    "tab-cbd1ef04-746d-4360-82f4-29bbbee619b2": {
+      "display_name": "Einstellungen",
+      "keys": [
+        "background_color",
+        "Horizontal_Space",
+        "is_transparent"
+      ],
+      "pos": 5,
+      "type": "tab",
+      "id": "y9HvBHRtQ2CC9Cm7vuYZsg"
     }
   },
   "image": null,
