@@ -10,7 +10,6 @@ import DonationGraph from "../components/dynamic/DonationGraph";
 import Headline from "../components/dynamic/Headline";
 import GoogleMapBlok from "../components/dynamic/GoogleMapBlok";
 import Media from "../components/dynamic/Media";
-import RichTextBlok from "../components/dynamic/RichTextBlok";
 import Teaser from "../components/dynamic/Teaser";
 import Youtube from "../components/dynamic/Youtube";
 import Form from "../components/forms/Form";
@@ -19,6 +18,8 @@ import FormInput from "../components/forms/FormInput";
 import getConfig from "next/config";
 import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
 import Grid2Columns from "../components/dynamic/grids/Grid-2-Columns";
+import TeaserSlider from "../components/dynamic/TeaserSlider";
+import RichText from "../components/static/RichText";
 
 const {
   publicRuntimeConfig,
@@ -39,10 +40,11 @@ const content = {
   cookie_select: CookieSelect,
   donation_graph: DonationGraph,
   headline: Headline,
+  long_text: RichText,
   map: GoogleMapBlok,
   media: Media,
-  richtext_blok: RichTextBlok,
   teaser: Teaser,
+  teaser_slider: TeaserSlider,
   youtube: Youtube,
 };
 

@@ -43,7 +43,7 @@ const ListElements = ({
         <li
           key={mainLink._uid}
           className={
-            "bullet phone:w-full phone:p-5 phone:text-center phone:border-b border-decoration last-of-type:border-none"
+            "bullet navi:w-full navi:p-5 navi:text-center navi:border-b border-decoration last-of-type:border-none"
           }
         >
           <Link
@@ -81,8 +81,8 @@ const DropDownListElement = ({
   );
   return (
     <li
-      className="multiple-nav-list-element relative phone:w-full \
-                phone:p-5 phone:text-center phone:border-b border-decoration last-of-type:border-none"
+      className="multiple-nav-list-element relative navi:w-full \
+                navi:p-5 navi:text-center navi:border-b border-decoration last-of-type:border-none"
     >
       <Link
         href={baseLink}
@@ -170,15 +170,22 @@ const Navigation = () => {
       className={`nav flex flex-row justify-between items-center p-10 \
         ${
           expanded
-            ? "phone:fixed phone:h-full phone:w-full phone:top-0 phone:left-0 phone:z-50 phone:flex-col phone:justify-start phone:gap-12 phone:!p-0 phone:!pt-16"
+            ? "navi:fixed navi:h-full navi:w-full navi:top-0 navi:left-0 navi:z-50 navi:flex-col navi:justify-start navi:gap-12 navi:!p-0 navi:!pt-16"
             : ""
         }`}
       {...storyblokEditable(navigationConfig)}
     >
-      <div className={`${expanded ? "phone:w-full phone:relative" : ""}`}>
-        <Link className={"no-link-decoration flex justify-center"} href="/">
+      <div
+        className={`${
+          expanded ? "navi:w-full navi:relative flex justify-center" : ""
+        }`}
+      >
+        <Link
+          className={"no-link-decoration flex justify-center w-fit"}
+          href="/"
+        >
           <Image
-            className={"max-w-32 phone:p-0"}
+            className={"max-w-32 navi:p-0"}
             alt="Junges Orchester Auenland e.V. Logo"
             src="/assets/images/logo.png"
             width={180}
@@ -189,7 +196,7 @@ const Navigation = () => {
         <button
           className={`hidden ${
             expanded
-              ? "phone:block phone:absolute phone:top-[-45px] phone:right-5"
+              ? "navi:block navi:absolute navi:top-[-45px] navi:right-5"
               : "hidden"
           }`}
           onClick={() => setExpanded(!expanded)}
@@ -202,8 +209,8 @@ const Navigation = () => {
       </div>
       <ul
         className={`flex flex-row justify-end items-center flex-wrap gap-10 \
-          phone:flex-col phone:w-full phone:gap-0 ${
-            expanded ? "" : "phone:hidden"
+          navi:flex-col navi:w-full navi:gap-0 ${
+            expanded ? "" : "navi:hidden"
           }`}
       >
         <ListElements
@@ -214,7 +221,7 @@ const Navigation = () => {
         />
       </ul>
       <button
-        className={`hidden ${expanded ? "!hidden" : "phone:block"}`}
+        className={`hidden ${expanded ? "!hidden" : "navi:block"}`}
         onClick={() => setExpanded(!expanded)}
       >
         <HamburgerIcon size={40} />

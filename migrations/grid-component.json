@@ -1,8 +1,9 @@
 {
   "name": "grid",
   "display_name": "Raster mit 2 Spalten",
+  "description": null,
   "created_at": "2024-10-21T21:43:40.409Z",
-  "updated_at": "2024-10-23T21:19:50.190Z",
+  "updated_at": "2025-02-05T20:55:13.508Z",
   "id": 6453296,
   "schema": {
     "type": {
@@ -43,14 +44,16 @@
       ],
       "default_value": "basis-1/2",
       "required": true,
-      "display_name": "Verhältnis"
+      "display_name": "Verhältnis",
+      "id": "BlapGYiwSnG0SQf0ONpOuA"
     },
     "vary_sizing": {
       "type": "boolean",
       "pos": 1,
       "display_name": "Verhältnis abwechseln",
       "description": "Diese Einstellung sorgt dafür, dass sich das Größenverhältnis mit jeder neuen Reihe abwechselt.",
-      "default_value": true
+      "default_value": true,
+      "id": "g9o--LlgSDithS6r7bjbyA"
     },
     "tab-a920f6b7-4649-44e7-980e-bc0b93fbdd0d": {
       "display_name": "Allgemein",
@@ -60,7 +63,8 @@
       ],
       "pos": 2,
       "type": "tab",
-      "name": "tab-a920f6b7-4649-44e7-980e-bc0b93fbdd0d"
+      "name": "tab-a920f6b7-4649-44e7-980e-bc0b93fbdd0d",
+      "id": "qSD2t0ZJROeYDrwLk_vdDQ"
     },
     "content": {
       "type": "bloks",
@@ -74,11 +78,13 @@
         "map",
         "media",
         "youtube",
-        "richtext_blok"
+        "richtext_blok",
+        "long_text"
       ],
       "minimum": 1,
       "required": true,
-      "display_name": "Content"
+      "display_name": "Content",
+      "id": "WKM8xJ08RuWCJCqE6XnD-A"
     },
     "tab-9d248c53-191d-48ad-96fc-b6172a8d4379": {
       "display_name": "Inhaltselemente",
@@ -87,7 +93,8 @@
       ],
       "pos": 4,
       "type": "tab",
-      "name": "tab-9d248c53-191d-48ad-96fc-b6172a8d4379"
+      "name": "tab-9d248c53-191d-48ad-96fc-b6172a8d4379",
+      "id": "nSSMUxkdSK2W_LYXKo1DeQ"
     }
   },
   "image": null,

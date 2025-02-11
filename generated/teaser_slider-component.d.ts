@@ -27,16 +27,14 @@ export interface RichtextStoryblok {
   [k: string]: any;
 }
 
-export interface TextMediaStoryblok {
-  image?: AssetStoryblok;
-  show_caption?: boolean;
-  caption?: string;
-  headline: string;
-  subheadline?: string;
+export interface TeaserSliderStoryblok {
+  switch_elements?: boolean;
+  height: string;
+  image: AssetStoryblok;
+  headline: HeadlineStoryblok[];
+  link: AnkerStoryblok[];
   text: RichtextStoryblok;
-  dark_background?: boolean;
-  text_first?: boolean;
   _uid: string;
-  component: "text_media";
+  component: "teaser_slider";
   [k: string]: any;
 }

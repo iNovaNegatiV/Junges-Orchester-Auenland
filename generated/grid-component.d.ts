@@ -11,6 +11,7 @@ export interface GridStoryblok {
     | MediaStoryblok
     | YoutubeStoryblok
     | RichtextBlokStoryblok
+    | LongTextStoryblok
   )[];
   _uid: string;
   component: "grid";

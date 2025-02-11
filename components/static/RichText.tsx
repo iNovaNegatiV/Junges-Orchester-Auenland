@@ -1,15 +1,26 @@
 import { StoryblokComponent } from "@storyblok/react";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { render, StoryblokRichtext } from "storyblok-rich-text-react-renderer";
-import { RichtextStoryblok } from "../../generated/richtext-component";
+import { LongTextStoryblok } from "../../generated/long_text-component";
+import { render } from "storyblok-rich-text-react-renderer";
+import { RichtextStoryblok } from "../../generated/teaser_slider-component";
 
-const RichText = ({ blok }: { blok: RichtextStoryblok }) => {
-  return render(blok, {
+const RichText = ({
+  blok,
+}: {
+  blok: LongTextStoryblok | RichtextStoryblok;
+}) => {
+  return render(blok.type === "doc" ? blok : blok.text, {
     markResolvers: {
       link: (children: ReactNode, props) => {
         return (
-          <Link id={props.anchor} href={props.href} target={props.target}>
+          <Link
+            id={props.anchor}
+            href={
+              props.linktype === "email" ? `mailto:${props.href}` : props.href
+            }
+            target={props.target}
+          >
             {children}
           </Link>
         );

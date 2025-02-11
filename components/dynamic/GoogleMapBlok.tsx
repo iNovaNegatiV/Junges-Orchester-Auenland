@@ -90,7 +90,7 @@ const GoogleMapBlok = ({ blok }: { blok: MapStoryblok }) => {
       <GoogleMap
         mapContainerStyle={{
           width: "100%",
-          height: "600px",
+          height: "400px",
         }}
         center={{ lat: latitude, lng: longitude }}
         zoom={mapZoom}

@@ -5,8 +5,8 @@ import { DonationGraphStoryblok } from "../../../generated/donation_graph-compon
 import { FormStoryblok } from "../../../generated/form-component";
 import { MapStoryblok } from "../../../generated/map-component";
 import { MediaStoryblok } from "../../../generated/media-component";
-import { RichtextStoryblok } from "../../../generated/text_media-component";
 import { YoutubeStoryblok } from "../../../generated/youtube-component";
+import { LongTextStoryblok } from "../../../generated/long_text-component";
 
 const Grid2Columns = ({ blok }: { blok: GridStoryblok }) => {
   const sizes = {
@@ -19,9 +19,10 @@ const Grid2Columns = ({ blok }: { blok: GridStoryblok }) => {
   };
   const normalSize: string = blok.type;
   const oddSize: string = sizes[normalSize];
+
   return (
     <div
-      className={"flex flex-wrap tablet:items-center"}
+      className={"flex flex-wrap justify-center"}
       {...storyblokEditable(blok)}
     >
       {blok.content.map(
@@ -32,7 +33,7 @@ const Grid2Columns = ({ blok }: { blok: GridStoryblok }) => {
             | FormStoryblok
             | MapStoryblok
             | MediaStoryblok
-            | RichtextStoryblok
+            | LongTextStoryblok
             | YoutubeStoryblok,
           index: number
         ) => {
@@ -45,7 +46,7 @@ const Grid2Columns = ({ blok }: { blok: GridStoryblok }) => {
           }
           return (
             <div
-              className={`${mySize} p-4 grid items-center tablet:basis-1/2 phone:basis-full`}
+              className={`flex flex-col items-center justify-center gap-4 pb-10 ${mySize} navi:basis-3/4 phone:basis-full`}
               key={contentBlok._uid}
             >
               <StoryblokComponent blok={contentBlok} key={contentBlok._uid} />

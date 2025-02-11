@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "../static/Icons";
 import { CarouselStoryblok } from "../../generated/carousel-component";
 import { storyblokEditable } from "@storyblok/react";

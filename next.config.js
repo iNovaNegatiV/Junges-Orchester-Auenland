@@ -1,7 +1,7 @@
 // next.config.js
 module.exports = {
   serverRuntimeConfig: {
-    mailUser: process.env.MAIL_USER,
+    mailUser: process.env.MAIL_USER_NAME,
     mailPort: process.env.MAIL_PORT,
     mailPassword: process.env.MAIL_PASS,
     mailHostname: process.env.MAIL_HOSTNAME,

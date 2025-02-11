@@ -14,6 +14,8 @@ const hostname: string = serverRuntimeConfig.mailHostname;
 const mail: string = serverRuntimeConfig.mailUser;
 const pass: string = serverRuntimeConfig.mailPassword;
 
+console.log(serverRuntimeConfig);
+
 const transporter = nodemailer.createTransport({
   host: hostname,
   port: port,
@@ -34,6 +36,7 @@ const SEND = async (
   surname: string,
   customInformation: string
 ): Promise<SentMessageInfo> => {
+  console.log("SENDING EMAIL");
   return await transporter.sendMail({
     from: mail,
     to: mail,

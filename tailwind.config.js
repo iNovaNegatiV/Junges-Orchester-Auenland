@@ -12,6 +12,7 @@ module.exports = {
       black: "#000000",
       darkGray: "#585858",
       lightGray: "#D3D3D3",
+      teaserBackground: "#e5eef2",
       brightOrange: "#FFAC1C",
       lightBlue: "#0062b3",
     },
@@ -19,6 +20,7 @@ module.exports = {
       sphone: { max: "640px" },
       phone: { max: "768px" },
       tablet: { min: "769px", max: "900px" },
+      navi: { max: "1134px" },
       desktop: { min: "901px" },
     },
     extend: {

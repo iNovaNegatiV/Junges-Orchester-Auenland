@@ -1,19 +1,21 @@
 {
   "name": "anker",
   "display_name": "Link-Button",
+  "description": null,
   "created_at": "2024-08-04T20:23:56.237Z",
-  "updated_at": "2024-09-21T08:03:38.631Z",
+  "updated_at": "2025-02-06T11:28:13.784Z",
   "id": 6126119,
   "schema": {
     "text": {
       "type": "text",
       "pos": 0,
       "required": true,
-      "display_name": "Text"
+      "display_name": "Text",
+      "id": "sfrU1xp9QIWwCQa0dZlCfA"
     },
     "type": {
       "type": "option",
-      "pos": 4,
+      "pos": 1,
       "use_uuid": true,
       "options": [
         {
@@ -32,13 +34,64 @@
           "name": "Pille"
         }
       ],
-      "required": true
+      "required": true,
+      "id": "7CFw_QXDSMKj1MKkcxIRyg"
+    },
+    "alignment": {
+      "type": "option",
+      "pos": 2,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "b017f0d9-bfa2-4040-a56f-8db38d5998da",
+          "name": "Links",
+          "value": "self-start"
+        },
+        {
+          "_uid": "ac152c0f-4406-4007-9dba-fe9c32e1ef2d",
+          "value": "self-center",
+          "name": "Mittig"
+        },
+        {
+          "_uid": "1a6fd871-8fd3-4b5b-96db-63d0c7aaa32a",
+          "value": "self-end",
+          "name": "Rechts"
+        }
+      ],
+      "required": true,
+      "display_name": "Positionierung",
+      "id": "tVO-09CdSreTML5Wb9qywg"
+    },
+    "phone_alignment": {
+      "type": "option",
+      "pos": 3,
+      "use_uuid": true,
+      "id": "fOMoZ1c2T3yJXY4gSybL2w",
+      "options": [
+        {
+          "_uid": "a2dc77e9-5a09-4f20-a605-a6d021b44129",
+          "name": "Links",
+          "value": "self-start"
+        },
+        {
+          "_uid": "78ff39c6-acb6-4312-823f-d877e1e4b92d",
+          "value": "self-center",
+          "name": "Mittig"
+        },
+        {
+          "_uid": "b67c2e71-fff2-48ad-bc39-8b506130a647",
+          "value": "self-right",
+          "name": "Rechts"
+        }
+      ],
+      "required": true,
+      "display_name": "Positionierung auf kleineren Bildschirmen"
     },
     "foreground_color": {
       "type": "custom",
-      "pos": 5,
+      "pos": 4,
       "use_uuid": true,
-      "required": true,
+      "required": false,
       "options": [
         {
           "name": "size",
@@ -52,19 +105,20 @@
         },
         {
           "name": "colors",
-          "value": "[\"#DFF0D8\", \"#397901\", \"#273385\"]",
+          "value": "[\"#FFFFFF\", \"#DFF0D8\", \"#397901\", \"#273385\", \"#000000\"]",
           "_uid": "06d45422-994e-42db-b972-a6c55a8f1324"
         }
       ],
       "default_value": "#273385",
       "field_type": "storyblok-palette",
-      "display_name": "Textfarbe"
+      "display_name": "Textfarbe",
+      "id": "3g6ekvz5Q_-exgsl87PgWg"
     },
     "background_color": {
       "type": "custom",
-      "pos": 6,
+      "pos": 5,
       "use_uuid": true,
-      "required": true,
+      "required": false,
       "options": [
         {
           "name": "size",
@@ -78,13 +132,22 @@
         },
         {
           "name": "colors",
-          "value": "[\"#DFF0D8\", \"#397901\", \"#273385\"]",
+          "value": "[\"#FFFFFF\", \"#DFF0D8\", \"#397901\", \"#273385\", \"#000000\"]",
           "_uid": "650f7b0a-dfed-472f-8585-2595190e1916"
         }
       ],
       "default_value": "#273385",
       "display_name": "Hintergrundfarbe",
-      "field_type": "storyblok-palette"
+      "field_type": "storyblok-palette",
+      "id": "FCtDPRbGTKCzAwHfGsL0hQ"
+    },
+    "link": {
+      "type": "multilink",
+      "pos": 6,
+      "required": true,
+      "show_anchor": true,
+      "allow_target_blank": true,
+      "id": "Py247Ts6Q4a2hHqygx7XRQ"
     },
     "tab-6db08a66-6260-41d7-b60f-aa4df70d7e62": {
       "display_name": "Darstellung",
@@ -92,17 +155,13 @@
         "type",
         "background_color",
         "foreground_color",
-        "text"
+        "text",
+        "alignment",
+        "phone_alignment"
       ],
       "pos": 7,
-      "type": "tab"
-    },
-    "link": {
-      "type": "multilink",
-      "pos": 5,
-      "required": true,
-      "show_anchor": true,
-      "allow_target_blank": true
+      "type": "tab",
+      "id": "bbCKZmJgQde2D6pN9w1-Yg"
     }
   },
   "image": null,

@@ -3,7 +3,7 @@ import { HeadlineStoryblok } from "../../generated/headline-component";
 
 const Headline = ({ blok }: { blok: HeadlineStoryblok }) => {
   const id = blok.scroll_id;
-  const alignment = blok.Alignment + " phone:!text-left";
+  const alignment = "text-" + blok.Alignment;
   let headlineSizes = {
     "32px": 1,
     "28px": 2,

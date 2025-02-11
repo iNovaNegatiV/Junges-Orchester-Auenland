@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -12,6 +11,8 @@ import { CookieProvider } from "../context/CookieContext";
 import { LayoutStoryblok } from "../generated/layout-component";
 import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
 import getConfig from "next/config";
+import BackToTop from "../components/static/BackToTop";
+import Contactbar from "../components/static/Contactbar";
 
 export default function Home({ story }) {
   story = useStoryblokState(story);
@@ -24,6 +25,8 @@ export default function Home({ story }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
+        <BackToTop />
+        <Contactbar slug={story.slug} />
         {story.content.body ? (
           story.content.body.map((nestedBlok: LayoutStoryblok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />

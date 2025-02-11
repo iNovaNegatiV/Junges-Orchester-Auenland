@@ -8,6 +8,9 @@ const PageLayout = ({ blok }: { blok: LayoutStoryblok }) => {
         width: blok.Horizontal_Space,
         maxWidth: blok.Horizontal_Space !== "100%" ? "1920px" : "100vw",
         margin: "0 auto 5rem auto",
+        backgroundColor: blok.is_transparent
+          ? "transparent"
+          : blok.background_color.color,
       }}
       {...storyblokEditable(blok)}
     >

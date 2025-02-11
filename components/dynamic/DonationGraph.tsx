@@ -11,7 +11,7 @@ const DonationGraph = ({ blok }: DonationGraphStoryblok) => {
   return (
     <div
       ref={ref}
-      className={`donation-graph w-full relative`}
+      className={`relative w-[450px]`}
       {...storyblokEditable(blok)}
     >
       <Image

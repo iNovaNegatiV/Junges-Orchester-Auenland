@@ -1,37 +1,14 @@
-import { CookieProvider } from "../context/CookieContext";
 import {
   getStoryblokApi,
   ISbStoriesParams,
   StoryblokClient,
-  StoryblokComponent,
 } from "@storyblok/react";
-import Head from "next/head";
-import Layout from "../components/static/Layout";
-import CookieBanner from "../components/static/CookieBanner";
-import { LayoutStoryblok } from "../generated/layout-component";
 import { PublicRuntimeConfig } from "../types/PublicRuntimeConfigType";
 import getConfig from "next/config";
+import Home from "./index";
 
 export default function Page({ story }) {
-  return (
-    <CookieProvider>
-      <CookieBanner />
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{story ? story.name : "StoryBlok Test"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout>
-        {story.content.body ? (
-          story.content.body.map((nestedBlok: LayoutStoryblok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-          ))
-        ) : (
-          <div></div>
-        )}
-      </Layout>
-    </CookieProvider>
-  );
+  return <Home story={story} />;
 }
 
 export async function getStaticProps({ params }) {

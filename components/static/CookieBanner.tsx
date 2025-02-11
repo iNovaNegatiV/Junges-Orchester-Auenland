@@ -20,7 +20,7 @@ const CookieBanner = ({ inlineElement = false }) => {
       return false;
     }
     return true;
-  }, []);
+  }, [consentGiven]);
 
   if (showBanner || inlineElement) {
     return (

@@ -4,6 +4,8 @@ import { AnkerStoryblok } from "../../generated/anker-component";
 import { storyblokEditable } from "@storyblok/react";
 
 const Anker = ({ blok }: { blok: AnkerStoryblok }) => {
+  const commonAlignment = blok.alignment;
+  const phoneAlignment = blok.phone_alignment;
   const radiusType =
     blok.type && blok.type === "normal"
       ? ""
@@ -13,8 +15,16 @@ const Anker = ({ blok }: { blok: AnkerStoryblok }) => {
 
   return (
     <Link
-      style={{ backgroundColor: blok.background_color.value }}
-      className={`w-fit flex flex-row items-center justify-between gap-8 px-8 py-3 hover:!underline no-link-decoration ${radiusType}`}
+      style={{
+        backgroundColor: blok.background_color.value,
+        alignSelf: commonAlignment,
+      }}
+      className={`w-fit flex flex-row justify-between 
+        gap-8 px-8 py-3
+        hover:!underline no-link-decoration 
+        ${radiusType} 
+        navi:!${phoneAlignment}
+      `}
       href={
         blok.link.anchor
           ? blok.link.cached_url.concat("#" + blok.link.anchor) ||

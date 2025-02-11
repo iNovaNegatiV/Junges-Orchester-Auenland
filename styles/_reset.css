@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto";
-  width: 100vw;
+  font-family: "Roboto-Regular";
+  font-size: 16px;
+  width: 100%;
   max-width: 100%;
   scroll-behavior: smooth;
 }
@@ -14,7 +15,6 @@ body > #__next {
 
 * {
   box-sizing: border-box;
-  font-size: 16px;
 }
 
 h1,
@@ -40,6 +40,97 @@ img {
   height: auto;
 }
 
-p {
-  font-family: "Roboto" !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: theme("colors.foreground");
+  font-family: "Roboto-Bold" !important;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 64px !important;
+  margin-bottom: 12px !important;
+}
+
+h2 {
+  font-size: 40px !important;
+  margin-bottom: 10px !important;
+}
+
+h3 {
+  font-size: 32px !important;
+  margin-bottom: 8px !important;
+}
+
+h4 {
+  font-size: 24px !important;
+  margin-bottom: 4px !important;
+}
+
+h5 {
+  font-size: 20px !important;
+  margin-bottom: 4px !important;
+}
+
+h6 {
+  font-size: 16px !important;
+  margin-bottom: 4px !important;
+}
+
+/* Phone Screen */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+  }
+
+  h3 {
+    font-size: 24px !important;
+  }
+
+  h4 {
+    font-size: 20px !important;
+  }
+
+  h5 {
+    font-size: 18px !important;
+  }
+
+  h6 {
+    font-size: 16px !important;
+  }
+}
+
+/* Tablet Screen */
+@media screen and (min-width: 769px) and (max-width: 900px) {
+  h1 {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 36px !important;
+  }
+
+  h3 {
+    font-size: 32px !important;
+  }
+
+  h4 {
+    font-size: 24px !important;
+  }
+
+  h5 {
+    font-size: 20px !important;
+  }
+
+  h6 {
+    font-size: 16px !important;
+  }
 }

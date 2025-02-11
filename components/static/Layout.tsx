@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-full">
       <Navigation />
       <main className={"layout-content grow pb-20"}>{children}</main>
       <Footer />
